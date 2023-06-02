@@ -6,6 +6,15 @@
 	var screen = ref('desktop'); // Options: desktop, tablet, mobile
 	var height = ref('fold'); // Options: fold, full, scale
 	var image = ref('/public/img/jpg/background.jpg');
+	var img = ref({});
+
+	function setScreen(name) {
+		screen.value = name;
+	}
+
+	function setHeight(name) {
+		height.value = name;
+	}
 
 	// Use file input to update image source
 	function updateImage(event) {
@@ -29,15 +38,15 @@
 			<div class="row justify-content-end">
 				<div class="col">
 					<div class="options screen">
-						<button :class="{ active: screen == 'desktop' }" @click="screen = 'desktop'">
+						<button :class="{ active: screen == 'desktop' }" @click="setScreen('desktop');">
 							<span class="material-symbols-outlined">desktop_windows</span>
 							<label>{{ screen }}</label>
 						</button>
-						<button :class="{ active: screen == 'tablet' }" @click="screen = 'tablet'">
+						<button :class="{ active: screen == 'tablet' }" @click="setScreen('tablet');">
 							<span class="material-symbols-outlined">laptop_chromebook</span>
 							<label>{{ screen }}</label>
 						</button>
-						<button :class="{ active: screen == 'mobile' }" @click="screen = 'mobile'">
+						<button :class="{ active: screen == 'mobile' }" @click="setScreen('mobile');">
 							<span class="material-symbols-outlined">phone_iphone</span>
 							<label>{{ screen }}</label>
 						</button>
@@ -47,15 +56,15 @@
 			<div class="row">
 				<div class="col">
 					<div class="options height">
-						<button :class="{ active: height == 'fold' }" @click="height = 'fold'">
+						<button :class="{ active: height == 'fold' }" @click="setHeight('fold');">
 							<span class="material-symbols-outlined">insert_page_break</span>
 							<label>{{ height }}</label>
 						</button>
-						<button :class="{ active: height == 'full' }" @click="height = 'full'">
+						<button :class="{ active: height == 'full' }" @click="setHeight('full');">
 							<span class="material-symbols-outlined">fit_screen</span>
 							<label>{{ height }}</label>
 						</button>
-						<button :class="{ active: height == 'scale' }" @click="height = 'scale'">
+						<button :class="{ active: height == 'scale' }" @click="setHeight('scale');">
 							<span class="material-symbols-outlined">aspect_ratio</span>
 							<label>{{ height }}</label>
 						</button>
@@ -63,7 +72,7 @@
 				</div>
 				<div class="col">
 					<div class="preview" :class="screen">
-						<div class="image" :class="height" :style="{ 'background-image': image != undefined ? 'url(' + image + ')' : '' }">
+						<div class="image" ref="img" :class="height" :style="{ 'background-image': image != undefined ? 'url(' + image + ')' : '' }">
 							<input type="file" ref="image" accept="image/png, image/jpeg" @change="updateImage" hidden>
 							<button @click="$refs.image.click()">
 								<span class="material-symbols-outlined">image</span>
