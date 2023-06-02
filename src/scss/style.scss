@@ -19,6 +19,8 @@ html {
 		overflow: hidden;
 
 		.view {
+			animation: fadeIn 1s ease-in-out;
+			animation-fill-mode: forwards;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -208,3 +210,12 @@ html {
 	outline: 0.25rem solid $color-primary;
 	outline-offset: -0.25rem;
 }
+
+/* Animations */
+@keyframes border-dance { 0% { background-position: left top, right bottom, left bottom, right top; } 100% { background-position: left 1rem top, right 1rem bottom, left bottom 1rem , right top 1rem; }}
+@keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; }}
+@keyframes fadeUp { 0% { opacity: 0; transform: translateX(-100%); } 100% { opacity: 1; transform: translateX(0%); }}
+@keyframes shrink { 0% { transform: scale(1); } 50% { transform: scale(0.75); } 100% { transform: scale(1); }}
+@keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; }}
+@keyframes bounce-up { 0% { transform: translate(0rem, 0rem); } 10% { transform: translate(0rem, -0.5rem); } 20% { transform: translate(0rem, 0.5rem); } 30% { transform: translate(0rem, 0rem); }}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(720deg); }}

@@ -5,7 +5,7 @@
 	// Initialize modes
 	var screen = ref('desktop'); // Options: desktop, tablet, mobile
 	var height = ref('fold'); // Options: fold, full, scale
-	var image = ref('/public/img/jpg/background.jpg');
+	var image = ref('./img/jpg/background.jpg');
 	var img = ref({});
 
 	function setScreen(name) {
