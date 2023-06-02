@@ -1,0 +1,37 @@
+/* Global styling */
+* {
+	box-sizing: border-box;
+	user-select: none;
+	font-size: 100%;
+}
+
+html {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: clamp(16px, 4vh, 32px);
+	line-height: clamp(16px, 4vh, 32px);
+
+	body {
+		min-width: 640px;
+		min-height: 360px;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		background-color: #EBF1FF;
+		overflow: hidden;
+	}
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 0.5rem; }
+::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0); }
+::-webkit-scrollbar-thumb { background: rgba(#545454, 0.5); border-radius: 999rem; border: 0.125rem solid transparent; background-clip: content-box; }
+::-webkit-scrollbar-thumb:hover { background: rgba(#545454, 1); border: 0rem solid transparent; background-clip: content-box; }
+
+/* Selected text */
+::selection { background: #4772B3; }
+
+/* Focus */
+*:focus-visible {
+	outline: 0.125rem solid #4772B3;
+	outline-offset: -0.125rem;
+}
