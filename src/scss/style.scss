@@ -50,8 +50,13 @@ html {
 						border: none;
 						color: #000;
 						cursor: pointer;
-						width: 400px;
 						height: 400px;
+						transition: all 0.05s ease-in-out;
+						width: 400px;
+
+						&:active {
+							transform: scale(0.95);
+						}
 					}
 				}
 			}
