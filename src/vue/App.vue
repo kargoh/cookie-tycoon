@@ -1,13 +1,17 @@
 <script setup>
 	import '../scss/style.scss';
-	import { ref } from 'vue';
+	import { ref, onMounted } from 'vue';
 
 	// Initialize modes
 	const cookieCount = ref(0);
-	var cookieImage = ref('./public/img/png/cookie-png.png')
+	var cookieImage = ref('./img/png/cookie-png.png');
+	onMounted(() => {
+		cookieCount.value = localStorage.getItem('cookieCount');
+	})
 
 	function clickDatCookie() {
 		cookieCount.value++;
+		localStorage.setItem('cookieCount', cookieCount.value);
 	}
 </script>
 
