@@ -15,125 +15,8 @@ html {
 
 	body {
 		margin: 0;
-		background-color: #EBF1FF;
+		background-color: #276384;
 		overflow: hidden;
-
-		.view {
-			animation: fadeIn 1s ease-in-out;
-			animation-fill-mode: forwards;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			height: 100vh;
-			width: 100vw;
-			
-			.container {
-				// Options styling
-				.options {
-					&.screen {
-						display: flex;
-						gap: 1.25rem;
-						align-items: flex-end;
-					}
-
-					&.height {
-						display: flex;
-						flex-direction: column;
-						gap: 1.25rem;
-					}
-
-				}
-
-				.preview {
-					$height: 75vh;
-					background-color: #ffffff;
-					border-radius: 1.25rem;
-					border: 1rem solid #212121;
-					border-top-width: 2rem;
-					border-bottom-width: 2rem;
-					height: $height;
-					max-width: 75vw;
-					overflow-y: auto;
-					position: relative;
-					transition: all 0.25s ease-in-out;
-
-					&:before {
-						content: '';
-						border-radius: 99rem;
-						display: block;
-						width: 1rem;
-						height: 1rem;
-						background-color: #000;
-						position: absolute;
-						left: 50%;
-						top: 1rem;
-						z-index: 1;
-						transition: inherit;
-						transform: translate(-50%, -50%);
-					}
-
-					&.desktop {
-						width: calc($height / (9 / 16));
-
-						&:before {
-							top: -1rem;
-						}
-					}
-
-					&.tablet {
-						width: calc($height / (16 / 16));
-					}
-
-					&.mobile {
-						width: calc($height / (16 / 9));
-					}
-					
-					.image {
-						background-color: $color-primary;
-						background-position: center;
-						background-size: cover;
-						position: relative;
-						transition: background-image 1s ease-in-out;
-
-						&.fold {
-							height: 65%;
-						}
-	
-						&.full {
-							height: 100%;
-						}
-	
-						&.scale {
-							height: 0%;
-							padding-bottom: calc((9 / 16) * 100%);
-						}
-
-						button {
-							position: absolute;
-							top: 50%;
-							left: 50%;
-							transform: translate(-50%, -50%);
-						}
-					}
-
-					.content {
-						text-align: center;
-						padding: 3rem 0rem 6rem;
-						
-						.title {
-							font-size: 3rem;
-							font-weight: bold;
-							line-height: 3rem;
-						}
-
-						p {
-							font-size: 1rem;
-							line-height: 1rem;
-						}
-					}
-				}
-			}
-		}
 
 		// Row/Column system
 		.row {
@@ -146,54 +29,35 @@ html {
 			&.justify-content-end { justify-content: flex-end; }
 
 			.col {
+				width: 100%;
 
+				.cookie-clicker {
+					text-align: center;
+
+					p {
+						background-color: rgba(0, 0, 0, 0.6);
+						color: #fff;
+						font-size: 4rem;
+						font-weight: 700;
+						line-height:4.5rem;
+						padding: 1rem 0;
+					}
+
+					button {
+						background-color: transparent;
+						background-size: contain;
+						background-repeat: no-repeat;
+						border: none;
+						color: #000;
+						cursor: pointer;
+						width: 400px;
+						height: 400px;
+					}
+				}
 			}
 		}
 		
-		button {
-			border: none;
-			border-radius: 1.5rem;
-			background-color: #ffffff;
-			color: #000;
-			cursor: pointer;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			font-size: 3rem;
-			padding: 0rem;
-			position: relative;
-			width: 4.5rem;
-			height: 4.5rem;
-
-			&.active {
-				background-color: $color-primary;
-				box-shadow: 0rem 0.3125rem 1.25rem rgba($color-primary, 0.25);
-				color: #ffffff;
-
-				label {
-					display: block;
-					box-shadow: inherit;
-				}
-			}
-
-			.material-symbols-outlined {
-				font-size: inherit;
-			}
-
-			label {
-				color: #000;
-				display: none;
-				position: absolute;
-				bottom: 0;
-				font-size: 0.75rem;
-				font-weight: bold;
-				background-color: #ffffff;
-				border-radius: 99rem;
-				padding: 0.25rem 1rem;
-				transform: translateY(50%);
-				text-transform: uppercase;
-			}
-		}
+		
 	}
 }
 
@@ -213,10 +77,3 @@ html {
 }
 
 /* Animations */
-@keyframes border-dance { 0% { background-position: left top, right bottom, left bottom, right top; } 100% { background-position: left 1rem top, right 1rem bottom, left bottom 1rem , right top 1rem; }}
-@keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; }}
-@keyframes fadeUp { 0% { opacity: 0; transform: translateX(-100%); } 100% { opacity: 1; transform: translateX(0%); }}
-@keyframes shrink { 0% { transform: scale(1); } 50% { transform: scale(0.75); } 100% { transform: scale(1); }}
-@keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; }}
-@keyframes bounce-up { 0% { transform: translate(0rem, 0rem); } 10% { transform: translate(0rem, -0.5rem); } 20% { transform: translate(0rem, 0.5rem); } 30% { transform: translate(0rem, 0rem); }}
-@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(720deg); }}
