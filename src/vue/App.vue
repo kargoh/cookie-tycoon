@@ -27,7 +27,7 @@
 	onUpdated(() => {
 		// text content should be the same as current `count.value`
 		console.log(cookieDrops)
-		document.getElementById('pizza').innerHTML += cookieDrops
+		document.getElementById('cookie-rain').innerHTML += cookieDrops
 	})
 </script>
 
@@ -36,7 +36,7 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col">
-					<div id="pizza" class="cookie-rain"></div>
+					<div id="cookie-rain" class="cookie-rain"></div>
 					<div class="cookie-clicker">
 						<p>{{ cookieCount }} cookies</p>
 						<button @click="clickDatCookie" :style="{ 'background-image': cookieImage != undefined ? 'url(' + cookieImage + ')' : '' }">
