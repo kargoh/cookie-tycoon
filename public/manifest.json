@@ -6,5 +6,10 @@
   "action": {
     "default_popup": "index.html",
     "default_title": "Click Dat Cookie"
+  },
+  "icons": { 
+    "16": "img/png/cookie.png",
+    "48": "img/png/cookie.png",
+    "128": "img/png/cookie.png"
   }
 }
