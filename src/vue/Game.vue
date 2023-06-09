@@ -14,7 +14,7 @@
 	}
 
 	onMounted(function() {
-		cookieCount.value = localStorage.getItem('cookieCount');
+		cookieCount.value = localStorage.getItem('cookieCount') || 0;
 	});
 </script>
 
