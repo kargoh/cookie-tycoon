@@ -1,5 +1,5 @@
-# Background Visualizer
-Preview background images with different options to choose from.
+# Cookie Clicker
+A cookie clicker game made with Vue.js v3 Composition API
 
 ## Local Development
 
