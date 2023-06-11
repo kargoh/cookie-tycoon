@@ -5,8 +5,6 @@
 
 	// Initialize Vue variables
 	var cookieCount = ref(0);
-
-    // Initialize background
     var background = ref(new Background());
 
     // Increment cookie count
@@ -16,11 +14,12 @@
         // Add a cookie to the background
         background.value.addCookie();
 		
-		//random number between 98 and 1
+		// Save cookie count for later
 		localStorage.setItem('cookieCount', cookieCount.value);
 	}
 
 	onMounted(function() {
+        // Set count to stored value
 		cookieCount.value = localStorage.getItem('cookieCount') || 0;
 	});
 </script>
