@@ -1,13 +1,20 @@
 <script setup>
-    import '../scss/game.scss';
     import { ref, onMounted } from 'vue';
+    import '../scss/game.scss';
+    import { Background } from '../js/Background.js';
 
-	// Initialize modes
-	const cookieCount = ref(0);
+	// Initialize Vue variables
+	var cookieCount = ref(0);
+
+    // Initialize background
+    var background = ref(new Background());
 
     // Increment cookie count
 	function clickDatCookie() {
 		cookieCount.value++;
+
+        // Add a cookie to the background
+        background.value.addCookie();
 		
 		//random number between 98 and 1
 		localStorage.setItem('cookieCount', cookieCount.value);
@@ -21,7 +28,9 @@
 <template>
     <div class="game">
         <div class="background">
-            <!-- TODO: Add cookie in the background when cookie is clicked -->
+            <TransitionGroup>
+                <img v-for="(cookie, index) of background.cookies" src="img/png/cookie.png" :style="cookie.style" :key="cookie" />
+            </TransitionGroup>
         </div>
         <div class="cookie">
             <label class="color">{{ cookieCount }} cookies</label>
