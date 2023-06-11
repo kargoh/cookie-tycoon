@@ -1,0 +1,22 @@
+.background {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	img {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: auto;
+		height: 4rem;
+		transform: translate(-50%, -50%);
+
+		@keyframes rainDown {
+			0% { transform: translate(-50%, calc(-100% + 0vh)) rotate(0deg); }
+			100% { transform: translate(-50%, calc(100% + 100vh)) rotate(360deg); }
+		}
+	}
+}

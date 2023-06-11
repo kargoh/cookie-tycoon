@@ -1,5 +1,7 @@
 <script setup>
 	import '../scss/shop.scss';
+
+    var props = defineProps(['game']);
 </script>
 
 <template>

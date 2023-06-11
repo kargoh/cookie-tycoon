@@ -4,9 +4,9 @@ class Background {
     }
 
     addCookie() {
-        var time = 2000; // ms
+        var time = 1000; // ms
         var cookie = {
-            style: 'left: ' + (Math.random() * 100) + '%; animation: rainDown ' + (time / 1000) + 's linear; animation-fill-mode: forwards;'
+            style: 'left: ' + (Math.random() * 100) + '%; animation: rainDown ' + (time / 1000) + 's ease-in; animation-fill-mode: forwards;'
         };
 
         // Add cookie to array
