@@ -13,7 +13,7 @@
     // Increment cookie count
 	function incrementCookie() {
 		game.value.increment();
-		background.value.background.addCookie();
+		background.value.addCookie();
 	}
 </script>
 
