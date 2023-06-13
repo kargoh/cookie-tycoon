@@ -9,10 +9,10 @@
 	<div class="shop">
 		<label>Store</label>
 		<ul>
-			<li v-for="(item, key, index) of game.shop.items">
-				<button @click="game.purchaseFromShop(key)" :disabled="game.getOrderFromShop(key)">
+			<li v-for="(item, key, index) of game.shop">
+				<button @click="game.purchase(key)" :disabled="game.orders[key]">
 					{{ item.name }}
-					<span class="cost">{{ game.getOrderFromShop(key) ? 'Owned' : item.cost }}</span>
+					<span class="cost">{{ game.orders[key] ? 'Owned' : item.cost }}</span>
 				</button>
 			</li>
 		</ul>
