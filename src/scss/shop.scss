@@ -15,6 +15,16 @@
 				position: relative;
 				width: 100%;
 
+				&[disabled] {
+					color: #999999;
+					cursor: initial;
+
+					.cost {
+						background-color: #dddddd;
+						color: #999999;
+					}
+				}
+
 				.cost {
 					color: #fff;
 					background-color: $color-primary;
@@ -25,7 +35,6 @@
 					position: absolute;
 					left: 0;
 					bottom: 0;
-					margin-left: 0.5rem;
 					transform: translate(-50%, 50%);
 				}
 			}

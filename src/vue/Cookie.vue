@@ -2,14 +2,14 @@
     import '../scss/game.scss';
 
     // Define game vars (props) and functions (emits)
-    var props = defineProps(['count', 'action']);
+    var props = defineProps(['game']);
 </script>
 
 <template>
     <div class="game">
         <div class="cookie">
-            <label class="color">{{ count }} cookies</label>
-            <button class="cookie" @click="action()">
+            <label class="color">{{ game.getCookies() }} cookies</label>
+            <button class="cookie" @click="game.increment()">
                 <img src="img/png/cookie.png">
             </button>
         </div>

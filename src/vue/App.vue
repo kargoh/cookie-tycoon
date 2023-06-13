@@ -23,10 +23,10 @@
 			<Background ref="background" />
 		</div>
 		<div class="content">
-			<Cookie :count="game.getCookies()" :action="incrementCookie" />
+			<Cookie :game="game" />
 		</div>
 		<div class="menu">
-			<Shop />
+			<Shop :game="game" />
 		</div>
 	</div>
 </template>
