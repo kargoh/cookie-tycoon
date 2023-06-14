@@ -9,34 +9,38 @@ class Game {
     }
 
     increment() {
+        // TODO: Add more shop item conditions like doubleClick
+
         // Define modifiers
-        var doubleClick = parseInt(this.orders['double-click'] ? 1 : 0);
+        var doubleClick = parseInt(this.orders['double-click'] ? 1 : 0); // Default 0
+        var amount = 1 + doubleClick;
+
 
         // Update cookies and save
-        this.cookies = this.cookies + 1 + doubleClick;
+        this.cookies += amount;
         localStorage.setItem('cookies', this.cookies);
+
+        // Return value for notifications
+        return amount;
     }
 
     getCookies() {
         return this.cookies;
     }
 
-    purchase(key) {
+    purchase(key, $event, notify = function(){}) {
         var item = this.shop[key];
 
         // Check if there are enough cookies
-        if (this.cookies >= item.cost) {
-            this.cookies -= item.cost;
+        if (this.cookies >= item.price) {
+            this.cookies -= item.price;
             this.orders[key] = this.shop[key];
             localStorage.setItem('cookies', this.cookies);
             localStorage.setItem('orders', JSON.stringify(this.orders));
-
-            // TODO: Add notification showing purchase
-            console.log(item['name'] + ' purchased');
+            notify(item['name'] + ' purchased', $event);
         }
         else {
-            // TODO: Add notification showing insufficient funds
-            console.log('Insufficient funds')
+            notify('Insufficient funds', $event);
         }
     }
 }

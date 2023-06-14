@@ -1,0 +1,19 @@
+.notifications {
+	overflow: hidden;
+	position: absolute;
+    pointer-events: none;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+    label {
+        position: absolute;
+        transform: translate(-50%, -50%);
+
+        @keyframes fadeUp {
+            0% { transform: translate(-120%, -50%); opacity: 1; }
+            100% { transform: translate(-120%, -200%); opacity: 0; }
+        }
+    }
+}

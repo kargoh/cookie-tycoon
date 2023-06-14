@@ -51,6 +51,7 @@ html {
 				font-weight: bold;
 				margin-bottom: 1rem;
 				padding: 0.5rem 1rem;
+				white-space: nowrap;
 
 				&.color {
 					background-color: $color-primary;

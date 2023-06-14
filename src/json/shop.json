@@ -1,10 +1,10 @@
 {
     "double-click": {
         "name": "Double Click",
-        "cost": 500
+        "price": 500
     },
     "clicker": {
         "name": "Add Clicker",
-        "cost": 1200
+        "price": 1200
     }
 }

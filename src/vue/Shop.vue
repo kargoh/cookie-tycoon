@@ -1,8 +1,8 @@
 <script setup>
 	import '../scss/shop.scss';
 
-	// Inherit game prop
-	var props = defineProps(['game']);
+	// Inherit game prop/functions
+	var props = defineProps(['game', 'notify']);
 </script>
 
 <template>
@@ -10,9 +10,9 @@
 		<label>Store</label>
 		<ul>
 			<li v-for="(item, key, index) of game.shop">
-				<button @click="game.purchase(key)" :disabled="game.orders[key]">
+				<button @click="game.purchase(key, $event, notify);" :disabled="game.orders[key]">
 					{{ item.name }}
-					<span class="cost">{{ game.orders[key] ? 'Owned' : item.cost }}</span>
+					<span class="price">{{ game.orders[key] ? 'Owned' : item.price }}</span>
 				</button>
 			</li>
 		</ul>
