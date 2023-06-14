@@ -10,7 +10,7 @@
     var game = ref(new Game());
     var background = ref();
 
-    // Increment cookie count
+    // Increment cookie count (this gets called by Cookies.vue)
 	function incrementCookie() {
 		game.value.increment();
 		background.value.addCookie();
@@ -23,7 +23,7 @@
 			<Background ref="background" />
 		</div>
 		<div class="content">
-			<Cookie :game="game" />
+			<Cookie :cookies="game.getCookies()" :increment-cookie="incrementCookie" />
 		</div>
 		<div class="menu">
 			<Shop :game="game" />
