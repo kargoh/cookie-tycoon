@@ -17,7 +17,7 @@ class Game {
 
 
         // Update cookies and save
-        this.cookies += amount;
+        this.cookies = this.cookies + amount;
         localStorage.setItem('cookies', this.cookies);
 
         // Return value for notifications

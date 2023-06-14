@@ -9,7 +9,7 @@
     <div class="game">
         <div class="cookie">
             <label class="color">{{ cookies }} cookies</label>
-            <button class="cookie" @click="incrementCookie(); notify('+' + incrementCookie(), $event)">
+            <button class="cookie" @click="notify('+' + incrementCookie(), $event)">
                 <img src="img/png/cookie.png">
             </button>
         </div>
