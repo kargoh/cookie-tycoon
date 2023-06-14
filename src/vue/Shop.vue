@@ -7,7 +7,7 @@
 
 <template>
 	<div class="shop">
-		<label>Store</label>
+		<label>Shop</label>
 		<ul>
 			<li v-for="(item, key, index) of game.shop">
 				<button @click="game.purchase(key, $event, notify);" :disabled="game.orders[key]">

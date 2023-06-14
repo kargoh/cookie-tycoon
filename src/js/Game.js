@@ -13,7 +13,8 @@ class Game {
 
         // Define modifiers
         var doubleClick = parseInt(this.orders['double-click'] ? 1 : 0); // Default 0
-        var amount = 1 + doubleClick;
+        var tripleClick = parseInt(this.orders['triple-click'] ? 2 : 0); // Default 0
+        var amount = 1 + doubleClick + tripleClick;
 
 
         // Update cookies and save
