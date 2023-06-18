@@ -12,10 +12,9 @@ class Game {
         // TODO: Add more shop item conditions like doubleClick
 
         // Define modifiers
-        var doubleClick = parseInt(this.orders['double-click'] ? 1 : 0); // Default 0
-        var tripleClick = parseInt(this.orders['triple-click'] ? 2 : 0); // Default 0
-        var amount = 1 + doubleClick + tripleClick;
-
+        var biggerClick = parseFloat(this.orders['bigger-click'] || 0) * 0.05; // 5% per stock
+        var doubleClick = parseInt(this.orders['double-click'] ? 1 : 0); // +1 for double click
+        var amount = 1 + biggerClick + doubleClick;
 
         // Update cookies and save
         this.cookies = this.cookies + amount;
@@ -31,11 +30,13 @@ class Game {
 
     purchase(key, $event, notify = function(){}) {
         var item = this.shop[key];
+        var stock = 0;
 
         // Check if there are enough cookies
         if (this.cookies >= item.price) {
+            stock = (this.orders[key] || 0);
             this.cookies -= item.price;
-            this.orders[key] = this.shop[key];
+            this.orders[key] = stock + 1; // Increment order stock
             localStorage.setItem('cookies', this.cookies);
             localStorage.setItem('orders', JSON.stringify(this.orders));
             notify(item['name'] + ' purchased', $event);

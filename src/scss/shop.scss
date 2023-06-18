@@ -19,23 +19,39 @@
 					color: #999999;
 					cursor: initial;
 
-					.price {
-						background-color: #dddddd;
-						color: #999999;
+					.info {
+						.price {
+							background-color: #dddddd;
+							color: #999999;
+						}
 					}
 				}
 
-				.price {
-					color: #fff;
-					background-color: $color-primary;
-					border-radius: inherit;
-					font-size: 0.75rem;
-					font-weight: bold;
-					padding: 0.25rem 0.5rem;
+				.info {
+					display: flex;
+					gap: 0.25rem;
 					position: absolute;
-					left: 0;
+					left: 50%;
 					bottom: 0;
 					transform: translate(-50%, 50%);
+
+					.quantity {
+						background-color: #dddddd;
+						color: #999999;
+						border-radius: 99rem;
+						font-size: 0.75rem;
+						font-weight: bold;
+						padding: 0.25rem 0.5rem;
+					}
+
+					.price {
+						color: #fff;
+						background-color: $color-primary;
+						border-radius: 99rem;
+						font-size: 0.75rem;
+						font-weight: bold;
+						padding: 0.25rem 0.5rem;
+					}
 				}
 			}
 		}

@@ -1,10 +1,12 @@
 {
+    "bigger-click": {
+        "name": "Bigger Click +5%",
+        "price": 20,
+        "stock": 20
+    },
     "double-click": {
         "name": "Double Click",
-        "price": 600
-    },
-    "triple-click": {
-        "name": "Triple Click",
-        "price": 1200
+        "price": 500,
+        "stock": 4
     }
 }
