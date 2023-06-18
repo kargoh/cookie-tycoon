@@ -8,7 +8,7 @@
 <template>
     <div class="game">
         <div class="cookie">
-            <label class="color">{{ cookies.toFixed(2) }} cookies</label>
+            <label class="color">{{ +(cookies.toFixed(2)) }} cookies</label>
             <button class="cookie" @click="notify('+' + incrementCookie(), $event)">
                 <img src="img/png/cookie.png">
             </button>
