@@ -1,6 +1,6 @@
 <script setup>
 	import '../scss/style.scss';
-	import { ref } from 'vue';
+	import { ref, onMounted } from 'vue';
     import { Game } from '../js/Game.js';
     import Cookie from './Cookie.vue';
     import Background from './Background.vue';
@@ -19,9 +19,21 @@
 		return amount;
 	}
 
+	function autoIncrement() {
+		var amount = game.value.increment()
+		setInterval(() => {
+			game.value.cookies = game.value.cookies + amount;
+		}, 1000);
+		return amount;
+	}
+
 	function notify(text, $event) {
 		notifications.value.addNotification(text, $event);
 	}
+
+	onMounted(() => {
+		autoIncrement();
+	})
 </script>
 
 <template>
