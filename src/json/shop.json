@@ -21,7 +21,7 @@
     },
     "content-creator": {
         "name": "Content Creator",
-        "price": 1000,
+        "price": 10000,
         "stock": 4
     }
 }
