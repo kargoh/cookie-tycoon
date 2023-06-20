@@ -6,6 +6,7 @@ class Game {
         this.cookies = parseFloat(localStorage.getItem('cookies') || 0);
         this.orders = JSON.parse(localStorage.getItem('orders') || '{}'); // Default empty object
         this.shop = shop; // Set json object reference
+        this.rate = 0; // Auto increment value
     }
 
     increment() {
@@ -31,6 +32,7 @@ class Game {
 
         // Update cookies and save
         this.cookies = this.cookies + amount;
+        this.rate = amount; // Update for Vue label
         localStorage.setItem('cookies', this.cookies);
 
         // Return value for notifications

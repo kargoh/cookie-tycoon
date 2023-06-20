@@ -2,13 +2,13 @@
     import '../scss/game.scss';
 
     // Define game vars (props) and functions (emits)
-    var props = defineProps(['cookies', 'increment-cookie', 'notify']);
+    var props = defineProps(['cookies', 'increment-cookie', 'notify', 'rate']);
 </script>
 
 <template>
     <div class="game">
         <div class="cookie">
-            <label class="color">{{ +(cookies.toFixed(2)) }} cookies</label>
+            <label class="color">{{ +(cookies.toFixed(2)) }} cookies, +{{ rate }}/s</label>
             <button class="cookie" @click="notify('+' + incrementCookie(), $event)">
                 <img src="img/png/cookie.png">
             </button>

@@ -15,7 +15,7 @@
     // Increment cookie count (this gets called by Cookies.vue)
 	function incrementCookie() {
 		var amount = game.value.increment()
-		for (var i = 0; i < Math.floor(amount); i++) background.value.addCookie();
+		background.value.addCookie();
 		return amount;
 	}
 
@@ -24,7 +24,7 @@
 		setInterval(() => {
 			var amount = game.value.autoIncrement();
 			if (amount > 0) {
-				for (var i = 0; i < Math.floor(amount); i++) background.value.addCookie();
+				background.value.addCookie();
 				notify('+' + amount);
 			}
 		}, 1000);
@@ -45,7 +45,7 @@
 			<Background ref="background" />
 		</div>
 		<div class="content">
-			<Cookie :cookies="game.getCookies()" :increment-cookie="incrementCookie" :notify="notify" />
+			<Cookie :cookies="game.getCookies()" :rate="game.rate" :increment-cookie="incrementCookie" :notify="notify" />
 		</div>
 		<div class="menu">
 			<Shop :game="game" :notify="notify" />
