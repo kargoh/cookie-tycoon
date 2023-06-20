@@ -5,8 +5,23 @@
         "stock": 20
     },
     "double-click": {
-        "name": "Double Click",
+        "name": "Better Click +1",
         "price": 500,
+        "stock": 4
+    },
+    "student": {
+        "name": "Student",
+        "price": 2000,
+        "stock": 4
+    },
+    "professor": {
+        "name": "Professor",
+        "price": 5000,
+        "stock": 4
+    },
+    "content-creator": {
+        "name": "Content Creator",
+        "price": 1000,
         "stock": 4
     }
 }

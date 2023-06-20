@@ -14,7 +14,10 @@ class Game {
         // Define modifiers
         var biggerClick = parseFloat(this.orders['bigger-click'] || 0) * 0.05; // 5% per stock
         var doubleClick = parseInt(this.orders['double-click'] || 0); // +1 for double click
-        var amount = 1 + biggerClick + doubleClick;
+        var student = parseInt(this.orders['student'] || 0) * 2; // +2 for student
+        var professor = parseInt(this.orders['professor'] || 0) * 5; // +5 for professor
+        var contentCreator = parseInt(this.orders['content-creator'] || 0) * 10; // +10 for content-creator
+        var amount = 1 + biggerClick + doubleClick + student + professor + contentCreator;
 
         // Update cookies and save
         this.cookies = this.cookies + amount;
