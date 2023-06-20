@@ -10,17 +10,17 @@
         "stock": 4
     },
     "student": {
-        "name": "Student +1",
+        "name": "Student +1/s",
         "price": 2000,
         "stock": 4
     },
     "professor": {
-        "name": "Professor +1",
+        "name": "Professor +5/s",
         "price": 5000,
         "stock": 4
     },
     "janitor": {
-        "name": "Janitor +1",
+        "name": "Janitor +10/s",
         "price": 10000,
         "stock": 4
     }
