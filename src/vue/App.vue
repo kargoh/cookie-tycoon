@@ -23,6 +23,7 @@
 		var amount = game.value.increment()
 		setInterval(() => {
 			game.value.cookies = game.value.cookies + amount;
+			localStorage.setItem('cookies', game.value.cookies);
 		}, 1000);
 		return amount;
 	}
