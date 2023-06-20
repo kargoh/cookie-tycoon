@@ -15,17 +15,19 @@
     // Increment cookie count (this gets called by Cookies.vue)
 	function incrementCookie() {
 		var amount = game.value.increment()
-		background.value.addCookie();
+		for (var i = 0; i < Math.floor(amount); i++) background.value.addCookie();
 		return amount;
 	}
 
 	function autoIncrement() {
-		var amount = game.value.increment()
+		// Increment cookies for worker types (ex: student, professor, etc.)
 		setInterval(() => {
-			game.value.cookies = game.value.cookies + amount;
-			localStorage.setItem('cookies', game.value.cookies);
+			var amount = game.value.autoIncrement();
+			if (amount > 0) {
+				for (var i = 0; i < Math.floor(amount); i++) background.value.addCookie();
+				notify('+' + amount);
+			}
 		}, 1000);
-		return amount;
 	}
 
 	function notify(text, $event) {

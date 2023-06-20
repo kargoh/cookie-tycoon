@@ -9,7 +9,7 @@
     function addCookie() {
         var time = 1000; // ms
         var cookie = {
-            style: 'left: ' + (Math.random() * 100) + '%; animation: rainDown ' + (time / 1000) + 's ease-in; animation-fill-mode: forwards;'
+            style: 'top: ' + (Math.random() * 25) + 'vh; left: ' + (Math.random() * 100) + '%; animation: rainDown ' + (time / 1000) + 's ease-in; animation-fill-mode: forwards;'
         };
 
         // Add cookie to array

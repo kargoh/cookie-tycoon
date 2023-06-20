@@ -23,6 +23,11 @@
 						.price {
 							background-color: #dddddd;
 							color: #999999;
+							padding: 0.25rem 0.5rem;
+
+							img {
+								display: none;
+							}
 						}
 					}
 				}
@@ -40,6 +45,7 @@
 						color: #999999;
 						border-radius: 99rem;
 						font-size: 0.75rem;
+						line-height: 1rem;
 						font-weight: bold;
 						padding: 0.25rem 0.5rem;
 					}
@@ -49,8 +55,23 @@
 						background-color: $color-primary;
 						border-radius: 99rem;
 						font-size: 0.75rem;
+						line-height: 1rem;
 						font-weight: bold;
-						padding: 0.25rem 0.5rem;
+						padding: 0.25rem 1.75rem 0.25rem 0.5rem;
+						position: relative;
+
+						img {
+							width: 1rem;
+							height: auto;
+							background-color: #ffffff;
+							border-radius: 99rem;
+							box-sizing: content-box;
+							padding: 0.125rem;
+							position: absolute;
+							right: 0.125rem;
+							top: 0.125rem;
+							margin-left: 0.25rem;
+						}
 					}
 				}
 			}

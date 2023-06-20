@@ -10,17 +10,17 @@
         "stock": 4
     },
     "student": {
-        "name": "Student",
+        "name": "Student +1",
         "price": 2000,
         "stock": 4
     },
     "professor": {
-        "name": "Professor",
+        "name": "Professor +1",
         "price": 5000,
         "stock": 4
     },
-    "content-creator": {
-        "name": "Content Creator",
+    "janitor": {
+        "name": "Janitor +1",
         "price": 10000,
         "stock": 4
     }

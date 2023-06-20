@@ -24,7 +24,7 @@
 				<button @click="game.purchase(key, $event, notify);" :disabled="isDisabled(key)">
 					{{ item.name }}
 					<div class="info">
-						<span class="price">{{ isDisabled(key) ? 'Maxed' : (item.price || 0) + 'c' }}</span>
+						<span class="price">{{ isDisabled(key) ? 'Maxed' : (item.price || 0) }}<img src="img/png/cookie.png"></span>
 						<span class="quantity">{{ (game.orders[key] || 0) + '/' + game.shop[key].stock }}</span>
 					</div>
 				</button>
