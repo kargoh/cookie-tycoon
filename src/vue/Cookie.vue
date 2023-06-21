@@ -9,8 +9,8 @@
     <div class="game">
         <div class="cookie">
             <label>
-                <span class="cookies">{{ +(cookies.toFixed(2)) }} cookies</span>
-                <span class="rate">+{{ rate }}/s</span>
+                <span class="cookies">{{ +(cookies.toFixed(2)) }} <img src="img/png/cookie.png"></span>
+                <span class="rate" v-if="rate != 0">+{{ rate }}/s</span>
             </label>
             <button class="cookie" @click="notify('+' + incrementCookie(), $event)">
                 <img src="img/png/cookie.png">

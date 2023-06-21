@@ -29,12 +29,25 @@
 				font-size: 1rem;
 				font-weight: bold;
 				margin: 0.25rem;
-				padding: 0.5rem 1rem;
+				padding: 0.5rem 2.5rem 0.5rem 1rem;
+				position: relative;
+
+				img {
+					width: 1.5rem;
+					height: auto;
+					background-color: #ffffff;
+					border-radius: 99rem;
+					box-sizing: content-box;
+					padding: 0.125rem;
+					position: absolute;
+					right: 0.125rem;
+					top: 0.125rem;
+					margin-left: 0.25rem;
+				}
 			}
 
 			.rate {
-				background-color: #dddddd;
-				color: #999999;
+				background-color: #ffffff;
 				border-radius: 99rem;
 				display: inline-block;
 				font-size: 1rem;
