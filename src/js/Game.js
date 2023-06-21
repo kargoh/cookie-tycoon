@@ -47,6 +47,7 @@ class Game {
         var item = this.shop[key];
         var stock = 0;
         var pack = 1;
+        var unlimited = this.shop[key].stock == -1; // Boolean
 
         // Allow shift + click to purchase in bulk
         if ($event.shiftKey == true) {
@@ -59,9 +60,9 @@ class Game {
             stock = (this.orders[key] || 0);
 
             // Purchase if the shop has inventory (or has unlimited "-1" stock)
-            if (stock < this.shop[key].stock || this.shop[key].stock == -1) {
+            if (stock < this.shop[key].stock || unlimited == true) {
                 // Top-off package size (ex: if stock = 18, and shop inventory = 20, then package = 2)
-                if (stock + pack > this.shop[key].stock) pack = this.shop[key].stock - stock;
+                if (stock + pack > this.shop[key].stock && unlimited == false) pack = this.shop[key].stock - stock;
 
                 // Update cookies and orders
                 this.cookies -= item.price * pack; // Subtract price from total
