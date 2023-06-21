@@ -11,7 +11,7 @@
 		var stock = orders[key] || 0;
 
 		// Disable if player stock is >= shop.json stock
-		if (stock >= shop[key].stock) disabled = true;
+		if (stock >= shop[key].stock && shop[key].stock != -1) disabled = true;
 		return disabled;
 	}
 </script>
@@ -25,7 +25,7 @@
 					{{ item.name }}
 					<div class="info">
 						<span class="price">{{ isDisabled(key) ? 'Maxed' : (item.price || 0) }}<img src="img/png/cookie.png"></span>
-						<span class="quantity">{{ (game.orders[key] || 0) + '/' + game.shop[key].stock }}</span>
+						<span class="quantity">{{ (game.orders[key] || 0) + '/' + (game.shop[key].stock != -1 ? game.shop[key].stock : '∞') }}</span>
 					</div>
 				</button>
 			</li>
