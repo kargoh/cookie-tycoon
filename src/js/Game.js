@@ -46,15 +46,33 @@ class Game {
     purchase(key, $event, notify = function(){}) {
         var item = this.shop[key];
         var stock = 0;
+        var pack = 1;
+
+        // Allow shift + click to purchase in bulk
+        if ($event.shiftKey == true) {
+            pack = Math.floor(this.cookies / item.price);
+            if (pack == 0) pack = 1;
+        }
 
         // Check if there are enough cookies
-        if (this.cookies >= item.price) {
+        if (this.cookies >= item.price * pack) {
             stock = (this.orders[key] || 0);
-            this.cookies -= item.price;
-            this.orders[key] = stock + 1; // Increment order stock
-            localStorage.setItem('cookies', this.cookies);
-            localStorage.setItem('orders', JSON.stringify(this.orders));
-            notify(item['name'] + ' purchased', $event);
+
+            // Purchase if the shop has inventory (or has unlimited "-1" stock)
+            if (stock < this.shop[key].stock || this.shop[key].stock == -1) {
+                // Top-off package size (ex: if stock = 18, and shop inventory = 20, then package = 2)
+                if (stock + pack > this.shop[key].stock) pack = this.shop[key].stock - stock;
+
+                // Update cookies and orders
+                this.cookies -= item.price * pack; // Subtract price from total
+                this.orders[key] = stock + pack; // Increment order stock
+                localStorage.setItem('cookies', this.cookies);
+                localStorage.setItem('orders', JSON.stringify(this.orders));
+                notify('+' + pack + ' purchased', $event);
+            }
+            else {
+                notify('Sold out!', $event);
+            }
         }
         else {
             notify('Insufficient funds', $event);
