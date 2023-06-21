@@ -1,7 +1,9 @@
 @import './variables.scss';
 
 .shop {
+	height: inherit;
 	padding: 1rem;
+	overflow-y: scroll;
 
 	ul {
 		list-style: none;

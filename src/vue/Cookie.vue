@@ -8,7 +8,10 @@
 <template>
     <div class="game">
         <div class="cookie">
-            <label class="color">{{ +(cookies.toFixed(2)) }} cookies, +{{ rate }}/s</label>
+            <label>
+                <span class="cookies">{{ +(cookies.toFixed(2)) }} cookies</span>
+                <span class="rate">+{{ rate }}/s</span>
+            </label>
             <button class="cookie" @click="notify('+' + incrementCookie(), $event)">
                 <img src="img/png/cookie.png">
             </button>
