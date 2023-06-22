@@ -7,6 +7,7 @@ class Game {
         this.orders = JSON.parse(localStorage.getItem('orders') || '{}'); // Default empty object
         this.shop = shop; // Set json object reference
         this.rate = 0; // Auto increment value
+        this.checkURL();
     }
 
     increment() {
@@ -81,6 +82,16 @@ class Game {
         }
         else {
             notify('Insufficient funds', $event);
+        }
+    }
+
+    checkURL() {
+        var url = location.href;
+
+        // Clear localStorage if reset parameter exists
+        if (url.includes('reset=true')) {
+            localStorage.clear();
+            location.href = location.protocol + '//' + location.host + location.pathname; // Redirect
         }
     }
 }
