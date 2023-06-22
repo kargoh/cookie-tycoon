@@ -73,7 +73,7 @@ class Game {
                 // Store cookies/orders in localStorage
                 localStorage.setItem('cookies', this.cookies);
                 localStorage.setItem('orders', JSON.stringify(this.orders));
-                notify('+' + amount + ' purchased', $event);
+                notify('+' + amount.toLocaleString() + ' purchased', $event);
             }
             else {
                 notify('Sold out!', $event);

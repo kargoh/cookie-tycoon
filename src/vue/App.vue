@@ -25,7 +25,7 @@
 			var amount = game.value.autoIncrement();
 			if (amount > 0) {
 				background.value.addCookie();
-				notify('+' + amount);
+				notify('+' + amount.toLocaleString());
 			}
 		}, 1000);
 	}
