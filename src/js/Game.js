@@ -46,30 +46,34 @@ class Game {
     purchase(key, $event, notify = function(){}) {
         var item = this.shop[key];
         var stock = 0;
-        var pack = 1;
+        var amount = 1;
         var unlimited = this.shop[key].stock == -1; // Boolean
 
         // Allow shift + click to purchase in bulk
         if ($event.shiftKey == true) {
-            pack = Math.floor(this.cookies / item.price);
-            if (pack == 0) pack = 1;
+            amount = Math.floor(this.cookies / item.price);
+            if (amount == 0) amount = 1;
         }
 
         // Check if there are enough cookies
-        if (this.cookies >= item.price * pack) {
+        if (this.cookies >= item.price * amount) {
             stock = (this.orders[key] || 0);
 
             // Purchase if the shop has inventory (or has unlimited "-1" stock)
             if (stock < this.shop[key].stock || unlimited == true) {
-                // Top-off package size (ex: if stock = 18, and shop inventory = 20, then package = 2)
-                if (stock + pack > this.shop[key].stock && unlimited == false) pack = this.shop[key].stock - stock;
+                // Top-off amount size (ex: if stock = 18, and shop inventory = 20, then amount = 2)
+                if (stock + amount > this.shop[key].stock && unlimited == false) {
+                    amount = this.shop[key].stock - stock;
+                }
 
                 // Update cookies and orders
-                this.cookies -= item.price * pack; // Subtract price from total
-                this.orders[key] = stock + pack; // Increment order stock
+                this.cookies -= item.price * amount; // Subtract price from total
+                this.orders[key] = stock + amount; // Increment order stock
+
+                // Store cookies/orders in localStorage
                 localStorage.setItem('cookies', this.cookies);
                 localStorage.setItem('orders', JSON.stringify(this.orders));
-                notify('+' + pack + ' purchased', $event);
+                notify('+' + amount + ' purchased', $event);
             }
             else {
                 notify('Sold out!', $event);

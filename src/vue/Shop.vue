@@ -25,7 +25,7 @@
 					{{ item.name }}
 					<div class="info">
 						<span class="price">{{ isDisabled(key) ? 'Maxed' : (item.price.toLocaleString() || 0) }}<img src="img/png/cookie.png"></span>
-						<span class="quantity">{{ (game.orders[key] || 0) + '/' + (game.shop[key].stock != -1 ? game.shop[key].stock : '∞') }}</span>
+						<span class="quantity">{{ (game.orders[key] || 0).toLocaleString() + '/' + (game.shop[key].stock != -1 ? game.shop[key].stock : '∞') }}</span>
 					</div>
 				</button>
 			</li>
