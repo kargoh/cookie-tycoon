@@ -47,29 +47,28 @@ class Game {
 
     purchase(key, $event, notify = function(){}) {
         var item = this.shop[key];
-        var stock = 0;
         var amount = 1;
-        var unlimited = this.shop[key].stock == -1; // Boolean
+        var unlimited = item.stock == -1; // Boolean
+        var price = this.getPrice(key, amount);
+        var stock = (this.orders[key] || 0);
 
-        // Allow shift + click to purchase in bulk
-        if ($event.shiftKey == true) {
-            amount = Math.floor(this.cookies / item.price);
+        // TODO: Find amount from scaled price ... using ... Algebra!
+        /* if ($event.shiftKey == true) {
+            amount = Math.floor(this.cookies / Math.pow(item.scale, amount + stock));
             if (amount == 0) amount = 1;
-        }
+        } */
 
         // Check if there are enough cookies
-        if (this.cookies >= item.price * amount) {
-            stock = (this.orders[key] || 0);
-
+        if (this.cookies >= price) {
             // Purchase if the shop has inventory (or has unlimited "-1" stock)
-            if (stock < this.shop[key].stock || unlimited == true) {
+            if (stock < item.stock || unlimited == true) {
                 // Top-off amount size (ex: if stock = 18, and shop inventory = 20, then amount = 2)
-                if (stock + amount > this.shop[key].stock && unlimited == false) {
-                    amount = this.shop[key].stock - stock;
+                if (stock + amount > item.stock && unlimited == false) {
+                    amount = item.stock - stock;
                 }
 
                 // Update cookies and orders
-                this.cookies -= item.price * amount; // Subtract price from total
+                this.cookies -= price; // Subtract price from total
                 this.orders[key] = stock + amount; // Increment order stock
 
                 // Store cookies/orders in localStorage
@@ -84,6 +83,20 @@ class Game {
         else {
             notify('Insufficient funds', $event);
         }
+    }
+
+    getPrice(key, amount = 1) {
+        var item = this.shop[key];
+        var price = item.price;
+        var stock = (this.orders[key] || 0);
+        var scale = Math.pow(item.scale, amount + stock);
+
+        // Add scale if you have stock in this item
+        price = price * amount;
+        if (stock != 0) price = price + scale;
+
+        // Return price with scale
+        return price;
     }
 
     checkURL() {

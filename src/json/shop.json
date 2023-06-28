@@ -3,36 +3,42 @@
         "name": "Bigger Click",
         "price": 20,
         "stock": 20,
-        "tooltip": "Click +.05"
+        "tooltip": "Click +.05",
+        "scale": 1.2
     },
     "double-click": {
         "name": "Better Click",
         "price": 500,
         "stock": 20,
-        "tooltip": "Click +1"
+        "tooltip": "Click +1",
+        "scale": 1.2
     },
     "oven": {
         "name": "Oven",
         "price": 2000,
         "stock": 1000,
-        "tooltip": "+2/s"
+        "tooltip": "+2/s",
+        "scale": 1.2
     },
     "bakery": {
         "name": "Bakery",
         "price": 5000,
         "stock": 1000,
-        "tooltip": "+5/s"
+        "tooltip": "+5/s",
+        "scale": 1.2
     },
     "delivery": {
         "name": "Delivery",
         "price": 10000,
         "stock": 1000,
-        "tooltip": "+10/s"
+        "tooltip": "+10/s",
+        "scale": 1.2
     },
     "shipment": {
         "name": "Shipment",
         "price": 50000,
         "stock": 1000,
-        "tooltip": "+50/s"
+        "tooltip": "+50/s",
+        "scale": 1.2
     }
 }
