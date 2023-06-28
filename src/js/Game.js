@@ -30,7 +30,7 @@ class Game {
         var bakery = parseInt(this.orders['bakery'] || 0) * 5; // +5 for bakery
         var delivery = parseInt(this.orders['delivery'] || 0) * 10; // +10 for delivery
         var shipment = parseInt(this.orders['shipment'] || 0) * 50; // +50 for shipment
-        var amount = oven + bakery + delivery;
+        var amount = oven + bakery + delivery + shipment;
 
         // Update cookies and save
         this.cookies = this.cookies + amount;
