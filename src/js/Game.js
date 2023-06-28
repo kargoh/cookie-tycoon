@@ -26,10 +26,11 @@ class Game {
 
     autoIncrement() {
         // Define automatic modifiers
-        var student = parseInt(this.orders['student'] || 0) * 2; // +2 for student
-        var professor = parseInt(this.orders['professor'] || 0) * 5; // +5 for professor
-        var contentCreator = parseInt(this.orders['janitor'] || 0) * 10; // +10 for janitor
-        var amount = student + professor + contentCreator;
+        var oven = parseInt(this.orders['oven'] || 0) * 2; // +2 for oven
+        var bakery = parseInt(this.orders['bakery'] || 0) * 5; // +5 for bakery
+        var delivery = parseInt(this.orders['delivery'] || 0) * 10; // +10 for delivery
+        var shipment = parseInt(this.orders['shipment'] || 0) * 50; // +50 for shipment
+        var amount = oven + bakery + delivery;
 
         // Update cookies and save
         this.cookies = this.cookies + amount;

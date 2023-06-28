@@ -20,7 +20,7 @@
 	}
 
 	function autoIncrement() {
-		// Increment cookies for worker types (ex: student, professor, etc.)
+		// Increment cookies for worker types (ex: oven, bakery, etc.)
 		setInterval(() => {
 			var amount = game.value.autoIncrement();
 			if (amount > 0) {

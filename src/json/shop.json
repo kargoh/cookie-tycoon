@@ -1,27 +1,38 @@
 {
     "bigger-click": {
-        "name": "Bigger Click +5%",
+        "name": "Bigger Click",
         "price": 20,
-        "stock": 20
+        "stock": 20,
+        "tooltip": "Click + .05"
     },
     "double-click": {
-        "name": "Better Click +1",
+        "name": "Better Click",
         "price": 500,
-        "stock": 20
+        "stock": 20,
+        "tooltip": "Click + 1"
     },
-    "student": {
-        "name": "Student +2/s",
+    "oven": {
+        "name": "Oven",
         "price": 2000,
-        "stock": -1
+        "stock": 1000,
+        "tooltip": "+2/s"
     },
-    "professor": {
-        "name": "Professor +5/s",
+    "bakery": {
+        "name": "Bakery",
         "price": 5000,
-        "stock": -1
+        "stock": 1000,
+        "tooltip": "+5/s"
     },
-    "janitor": {
-        "name": "Janitor +10/s",
+    "delivery": {
+        "name": "Delivery",
         "price": 10000,
-        "stock": -1
+        "stock": 1000,
+        "tooltip": "+10/s"
+    },
+    "shipment": {
+        "name": "Shipment",
+        "price": 50000,
+        "stock": 1000,
+        "tooltip": "+50/s"
     }
 }

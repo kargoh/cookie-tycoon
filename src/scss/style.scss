@@ -12,7 +12,7 @@ html {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: clamp(16px, 2vh, 32px);
 	line-height: clamp(16px, 2vh, 32px);
-	min-width: 360px;
+	min-width: 640px;
 	min-height: 360px;
 
 	body {
@@ -42,6 +42,7 @@ html {
 
 			.menu {
 				height: inherit;
+				min-width: 384px;
 			}
 
 			label {
