@@ -35,30 +35,24 @@
 					}
 				}
 
-				
-				/* Show the tooltip text when you mouse over the tooltip container */
 				&:hover .tooltip {
 					visibility: visible;
 				}
 
-				/* Tooltip text */
 				.tooltip {
-					visibility: hidden;
-					font-size: .85rem;
+					background-color: #9999997a;
+					border-radius: .75rem 99rem 99rem .75rem;
+					color: #000;
+					font-size: .75rem;
 					height: 50px;
 					line-height: 50px;
-					width: 100%;
-					white-space: break-spaces;
 					max-width: 65px;
-					background-color: #9999997a;
-					color: #000;
-					text-align: center;
-					border-radius: .75rem 99rem 99rem .75rem;
-					
-					/* Position the tooltip text - see examples below! */
 					position: absolute;
 					right: 0;
+					text-align: center;
 					top: 0;
+					visibility: hidden;
+					width: 100%;
 					z-index: 999;
 				}
 				
