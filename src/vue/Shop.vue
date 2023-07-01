@@ -22,7 +22,7 @@
 		<ul>
 			<li v-for="(item, key, index) of game.shop">
 				<button @click="game.purchase(key, $event, notify);" :disabled="isDisabled(key)">
-					{{ item.name }}
+					<span class="text">{{ item.name }}</span>
 					<div class="info">
 						<span class="price">{{ isDisabled(key) ? 'Maxed' : (game.getPrice(key).toLocaleString() || 0) }}<img src="img/png/cookie.png"></span>
 						<span class="quantity">{{ (game.orders[key] || 0).toLocaleString() + '/' + (game.shop[key].stock != -1 ? game.shop[key].stock : '∞') }}</span>

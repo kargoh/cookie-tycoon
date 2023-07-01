@@ -18,7 +18,10 @@
 		position: relative;
 
 		label {
+			align-items: center;
 			background-color: transparent;
+			display: flex;
+			flex-direction: column;
 			white-space: normal;
 
 			.cookies {
