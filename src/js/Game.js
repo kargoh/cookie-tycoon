@@ -45,9 +45,9 @@ class Game {
         return this.cookies;
     }
 
-    purchase(key, $event, notify = function(){}) {
+    purchase(key, $event, notify = function(){}, shopAmount) {
         var item = this.shop[key];
-        var amount = 1;
+        var amount = shopAmount;
         var unlimited = item.stock == -1; // Boolean
         var price = this.getPrice(key, amount);
         var stock = (this.orders[key] || 0);

@@ -4,41 +4,63 @@
         "price": 20,
         "stock": -1,
         "tooltip": "Click + 1%",
-        "scale": 2
+        "scale": 1.1,
+        "amount": 1
     },
     "double-click": {
         "name": "Better Click",
         "price": 100,
         "stock": -1,
         "tooltip": "Click +1",
-        "scale": 1.05
+        "scale": 1.1,
+        "amount": 1
     },
     "oven": {
         "name": "Oven",
         "price": 200,
         "stock": -1,
         "tooltip": "+2/s",
-        "scale": 1.05
+        "scale": 1.05,
+        "amount": 1
     },
     "bakery": {
         "name": "Bakery",
         "price": 800,
         "stock": -1,
         "tooltip": "+5/s",
-        "scale": 1.05
+        "scale": 1.05,
+        "amount": 1
     },
     "delivery": {
         "name": "Delivery",
         "price": 3000,
         "stock": -1,
         "tooltip": "+10/s",
-        "scale": 1.05
+        "scale": 1.05,
+        "amount": 1
     },
     "shipment": {
         "name": "Shipment",
         "price": 10000,
         "stock": -1,
         "tooltip": "+50/s",
-        "scale": 1.05
+        "scale": 1.05,
+        "amount": 1
+    },
+    "drones": {
+        "name": "Drones",
+        "price": 50000,
+        "stock": -1,
+        "tooltip": "+200/s",
+        "scale": 1.05,
+        "amount": 1
+    },
+    "space-ship": {
+        "name": "Space Ship",
+        "price": 150000,
+        "stock": -1,
+        "tooltip": "+500/s",
+        "scale": 1.05,
+        "amount": 1
     }
 }
