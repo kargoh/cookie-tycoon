@@ -1,9 +1,10 @@
 <script setup>
+	import { ref } from 'vue';
 	import '../scss/shop.scss';
 
 	// Inherit game prop/functions
 	var props = defineProps(['game', 'notify']);
-	var purchaseAmount = 1;
+	var purchaseAmount = ref(1);
 
 	function isDisabled(key) {
 		var disabled = false;
@@ -21,9 +22,9 @@
 	<div class="shop">
 		<label>Shop</label>
 		<div class="shop-buttons">
-			<button @click="purchaseAmount = 1;" class="shop-button">Buy 1</button>
-			<button @click="purchaseAmount = 10;" class="shop-button">Buy 10</button>
-			<button @click="purchaseAmount = 100;" class="shop-button">Buy 100</button>
+			<button @click="purchaseAmount = 1;" class="shop-button" :class="{ toggle: purchaseAmount == 1 }">Buy 1</button>
+			<button @click="purchaseAmount = 10;" class="shop-button" :class="{ toggle: purchaseAmount == 10 }">Buy 10</button>
+			<button @click="purchaseAmount = 100;" class="shop-button" :class="{ toggle: purchaseAmount == 100 }">Buy 100</button>
 		</div>
 		<ul>
 			<li v-for="(item, key, index) of game.shop">
