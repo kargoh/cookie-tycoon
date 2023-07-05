@@ -8,7 +8,7 @@
     import Shop from './Shop.vue';
 
 	// Initialize Vue variables
-    var game = ref(new Game());
+    var game = ref(window.game = new Game());
     var background = ref();
     var notifications = ref();
 
