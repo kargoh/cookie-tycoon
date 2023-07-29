@@ -1,5 +1,5 @@
-# Cookie Clicker
-A cookie clicker game made with Vue.js v3 Composition API
+# Cookie Tycoon
+A cookie tycoon game made with Vue.js v3 Composition API
 
 ## Local Development
 
