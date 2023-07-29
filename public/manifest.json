@@ -1,11 +1,11 @@
 {
   "manifest_version": 3,
-  "name": "Click Dat Cookie",
-  "description": "Click dat cookie",
+  "name": "Cookie Tycoon",
+  "description": "Cookie Tycoon",
   "version": "0.0.1",
   "action": {
     "default_popup": "index.html",
-    "default_title": "Click Dat Cookie"
+    "default_title": "Cookie Tycoon"
   },
   "icons": { 
     "16": "img/png/cookie.png",
