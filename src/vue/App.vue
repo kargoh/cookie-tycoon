@@ -6,6 +6,7 @@
     import Background from './Background.vue';
     import Notifications from './Notifications.vue';
     import Shop from './Shop.vue';
+	import Review from './Review.vue';
 
 	// Initialize Vue variables
     var game = ref(window.game = new Game());
@@ -72,5 +73,6 @@
 		<div class="notifications">
 			<Notifications ref="notifications" />
 		</div>
+		<Review />
 	</div>
 </template>

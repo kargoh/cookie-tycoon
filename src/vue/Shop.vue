@@ -20,7 +20,10 @@
 
 <template>
 	<div class="shop">
-		<label>Shop</label>
+		<div class="top">
+			<label>Shop</label>
+			<Review />
+		</div>
 		<div class="shop-buttons">
 			<button @click="purchaseAmount = 1;" class="shop-button" :class="{ toggle: purchaseAmount == 1 }">Buy 1</button>
 			<button @click="purchaseAmount = 10;" class="shop-button" :class="{ toggle: purchaseAmount == 10 }">Buy 10</button>
