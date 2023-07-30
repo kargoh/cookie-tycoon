@@ -12,7 +12,7 @@
 
 		button {
 			background-color: #fff;
-			border: 0.125rem solid #fff;
+			border: $border-width solid #fff;
 			border-radius: 99rem;
 			display: inline-block;
 			font-size: 1rem;
@@ -101,6 +101,8 @@
 						background-color: #dddddd;
 						color: #999999;
 						border-radius: 99rem;
+						display: flex;
+						align-items: center;
 						font-size: 0.75rem;
 						line-height: 1rem;
 						font-weight: bold;
@@ -111,7 +113,7 @@
 						color: #fff;
 						background-color: $color-primary;
 						border-radius: 99rem;
-						border: 0.125rem solid #fff;
+						border: $border-width solid #fff;
 						font-size: 0.75rem;
 						line-height: 1rem;
 						font-weight: bold;

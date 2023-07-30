@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 .notifications {
 	overflow: hidden;
 	position: absolute;
@@ -10,7 +12,7 @@
 
     label {
         position: absolute;
-        border: 0.125rem solid #fff;
+        border: $border-width solid #fff;
         transform: translate(-50%, -50%);
 
         @keyframes fadeUp {
