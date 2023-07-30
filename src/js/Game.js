@@ -90,10 +90,20 @@ class Game {
     getPrice(key, amount = 1) {
         var item = this.shop[key];
         var price = item.price;
+        var addPrice = 0;
         var stock = (this.orders[key] || 0);
 
         // Add scale if you have stock in this item
-        if (stock != 0 || amount > 1) price = Math.ceil(Math.pow(item.scale, stock + amount) * item.price);
+        if (stock != 0 || amount > 1) {
+            for(let i = 0; i < amount; i++) {
+                addPrice = Math.ceil(Math.pow(item.scale, stock + i) * item.price);
+                price = price + addPrice
+            }
+            
+            console.log("Add Price: ", addPrice)
+            console.log("Price: ", price)
+        }
+        //price = Math.ceil(Math.pow(item.scale, stock + amount) * item.price);
 
         // Return price with scale
         return price;
