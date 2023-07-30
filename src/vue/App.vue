@@ -36,7 +36,6 @@
 
 	function purchaseAmountToggle() {
 		window.addEventListener("DOMContentLoaded", (event) => {
-			console.log(Game)
 			var menuToggles = document.querySelectorAll('.shop-button');
 			var prevToggle;
 			for (var i = 0, len = menuToggles.length; i < len; i++) {
