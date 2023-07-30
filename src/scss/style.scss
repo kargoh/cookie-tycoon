@@ -39,6 +39,8 @@ html {
 
 			.content {
 				height: inherit;
+				position: relative;
+				z-index: 1;
 				flex-grow: 1;
 			}
 
@@ -46,6 +48,8 @@ html {
 				height: inherit;
 				max-width: 50%;
 				width: 100%; 
+				position: relative;
+				z-index: 1;
 			}
 
 			label {
