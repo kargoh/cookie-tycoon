@@ -13,6 +13,8 @@
                 <span class="rate" v-if="rate != 0">+{{ rate.toLocaleString() }}/s</span>
             </label>
             <button class="cookie" @click="notify('+' + incrementCookie().toLocaleString(), $event)">
+                <img src="img/svg/star-2.svg" class="star" />
+                <img src="img/svg/star-1.svg" class="star" />
                 <img src="img/png/cookie.png">
             </button>
         </div>
