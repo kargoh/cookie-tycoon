@@ -35,6 +35,7 @@ html {
 			position: relative;
 			width: inherit;
 			height: inherit;
+			overflow: hidden;
 
 			.content {
 				height: inherit;
@@ -78,9 +79,9 @@ html {
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 0.5rem; }
-::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0); }
-::-webkit-scrollbar-thumb { background: rgba(#545454, 0.5); border-radius: 999rem; border: 0.125rem solid transparent; background-clip: content-box; }
-::-webkit-scrollbar-thumb:hover { background: rgba(#545454, 1); border: 0rem solid transparent; background-clip: content-box; }
+::-webkit-scrollbar-track { background: rgba(#ffffff, 0.25); }
+::-webkit-scrollbar-thumb { background: rgba(#ffffff, 1); border-radius: 999rem; border: 0.125rem solid transparent; background-clip: content-box; }
+::-webkit-scrollbar-thumb:hover { background: rgba(#ffffff, 1); border: 0rem solid transparent; background-clip: content-box; }
 
 /* Selected text */
 ::selection { background: $color-primary; }
