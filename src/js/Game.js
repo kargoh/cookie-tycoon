@@ -12,9 +12,8 @@ class Game {
 
     increment() {
         // Define singular modifiers
-        var biggerClick = parseFloat(this.orders['bigger-click'] || 0) * 0.05; // 5% per stock
         var doubleClick = parseInt(this.orders['double-click'] || 0); // +1 for double click
-        var amount = 1 + biggerClick + doubleClick;
+        var amount = 1 + doubleClick;
 
         // Update cookies and save
         this.cookies = this.cookies + amount;
@@ -31,9 +30,19 @@ class Game {
         var delivery = parseInt(this.orders['delivery'] || 0) * 10; // +10 for delivery
         var shipment = parseInt(this.orders['shipment'] || 0) * 50; // +50 for shipment
         var drones = parseInt(this.orders['drones'] || 0) * 200; // +200 for drones
-        var spaceShip = parseInt(this.orders['space-ship'] || 0) * 500; // +500 for space ship
-        var moonCookies = parseInt(this.orders['moon-cookies'] || 0) * 1250; // +500 for space ship
-        var amount = oven + bakery + delivery + shipment + drones + spaceShip + moonCookies;
+        var spaceShip = parseInt(this.orders['spaceship'] || 0) * 500; // +500 for space ship
+        var moonCookies = parseInt(this.orders['moon-cookies'] || 0) * 1250; // +1250 for moon cookies
+        var moonColonies = parseInt(this.orders['moon-colony'] || 0) * 3000; // +3000 for moon colonies
+        var spaceshipEnterprise = parseInt(this.orders['spaceship-enterprise'] || 0) * 10000; // +10000 for spaceship enterprises
+        var amount = oven
+        + bakery
+        + delivery
+        + shipment
+        + drones
+        + spaceShip
+        + moonCookies
+        + moonColonies
+        + spaceshipEnterprise;
 
         // Update cookies and save
         this.cookies = this.cookies + amount;

@@ -1,18 +1,10 @@
 {
-    "bigger-click": {
-        "name": "Bigger Click",
-        "price": 20,
-        "stock": -1,
-        "tooltip": "Click + 1%",
-        "scale": 1.1,
-        "amount": 1
-    },
     "double-click": {
         "name": "Better Click",
         "price": 100,
         "stock": -1,
         "tooltip": "Click +1",
-        "scale": 1.1,
+        "scale": 1.05,
         "amount": 1
     },
     "oven": {
@@ -55,8 +47,8 @@
         "scale": 1.05,
         "amount": 1
     },
-    "space-ship": {
-        "name": "Space Ship",
+    "spaceship": {
+        "name": "Spaceship",
         "price": 150000,
         "stock": -1,
         "tooltip": "+500/s",
@@ -68,6 +60,22 @@
         "price": 500000,
         "stock": -1,
         "tooltip": "+1250/s",
+        "scale": 1.05,
+        "amount": 1
+    },
+    "moon-colony": {
+        "name": "Moon Colony",
+        "price": 1000000,
+        "stock": -1,
+        "tooltip": "+3000/s",
+        "scale": 1.05,
+        "amount": 1
+    },
+    "spaceship-enterprise": {
+        "name": "Spaceship Enterprise",
+        "price": 2500000,
+        "stock": -1,
+        "tooltip": "+10000/s",
         "scale": 1.05,
         "amount": 1
     }
