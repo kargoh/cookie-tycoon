@@ -62,5 +62,13 @@
         "tooltip": "+500/s",
         "scale": 1.05,
         "amount": 1
+    },
+    "moon-cookies": {
+        "name": "Moon Cookies",
+        "price": 500000,
+        "stock": -1,
+        "tooltip": "+1250/s",
+        "scale": 1.05,
+        "amount": 1
     }
 }

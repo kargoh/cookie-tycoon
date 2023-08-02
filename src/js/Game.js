@@ -32,7 +32,8 @@ class Game {
         var shipment = parseInt(this.orders['shipment'] || 0) * 50; // +50 for shipment
         var drones = parseInt(this.orders['drones'] || 0) * 200; // +200 for drones
         var spaceShip = parseInt(this.orders['space-ship'] || 0) * 500; // +500 for space ship
-        var amount = oven + bakery + delivery + shipment + drones + spaceShip;
+        var moonCookies = parseInt(this.orders['moon-cookies'] || 0) * 1250; // +500 for space ship
+        var amount = oven + bakery + delivery + shipment + drones + spaceShip + moonCookies;
 
         // Update cookies and save
         this.cookies = this.cookies + amount;
