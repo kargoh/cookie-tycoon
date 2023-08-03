@@ -22,6 +22,7 @@
 			background-color: transparent;
 			display: flex;
 			flex-direction: column;
+			margin-bottom: 0rem;
 			position: relative;
 			white-space: normal;
 			z-index: 1;
@@ -46,11 +47,13 @@
 					background-color: #ffffff;
 					border-radius: 99rem;
 					box-sizing: content-box;
+					margin-left: 0.25rem;
+					opacity: 0;
 					padding: 0.125rem;
 					position: absolute;
 					right: 0.125rem;
 					top: 0.125rem;
-					margin-left: 0.25rem;
+					transition: all 0.15s ease-in-out;
 				}
 			}
 
@@ -63,6 +66,10 @@
 				font-weight: bold;
 				margin: 0.25rem;
 				padding: 0.5rem 1rem;
+
+				&.disabled {
+					opacity: 0.25;
+				}
 			}
 		}
 
@@ -79,8 +86,10 @@
 
 			img {
 				width: 40vh;
-				height: auto;
+				height: 40vh;
 				max-width: 100%;
+				opacity: 0;
+				transition: all 0.15s ease-in-out;
 				position: relative;
 				pointer-events: none;
 

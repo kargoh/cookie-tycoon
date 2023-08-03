@@ -163,14 +163,16 @@
 
 						img {
 							width: 1rem;
-							height: auto;
+							height: 1rem;
 							background-color: #ffffff;
 							border-radius: 99rem;
 							box-sizing: content-box;
+							opacity: 0;
 							padding: 0.125rem;
 							position: absolute;
 							right: 0.125rem;
 							top: 0.125rem;
+							transition: all 0.15s ease-in-out;
 							margin-left: 0.25rem;
 						}
 					}

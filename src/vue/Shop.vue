@@ -31,7 +31,7 @@
 					<span class="icon material-symbols-outlined" v-if="item.icon">{{ item.icon }}</span>
 					<span class="text">{{ item.name }}</span>
 					<div class="info">
-						<span class="price">{{ isDisabled(key) ? 'Maxed' : (game.getPrice(key, purchaseAmount).toLocaleString() || 0) }}<img src="img/png/cookie.png"></span>
+						<span class="price">{{ isDisabled(key) ? 'Maxed' : (game.getPrice(key, purchaseAmount).toLocaleString() || 0) }}<img src="img/png/cookie.png" onload="this.style.opacity=1"></span>
 						<span class="quantity">{{ (game.orders[key] || 0).toLocaleString() + '/' + (game.shop[key].stock != -1 ? game.shop[key].stock : '∞') }}</span>
 					</div>
 					<span class="tooltip">{{ item.tooltip }}</span>
