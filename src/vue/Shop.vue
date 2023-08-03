@@ -22,7 +22,6 @@
 	<div class="shop">
 		<div class="top">
 			<label>Shop</label>
-			<Review />
 		</div>
 		<div class="shop-buttons">
 			<button @click="purchaseAmount = 1;" class="shop-button" :class="{ toggle: purchaseAmount == 1 }">Buy 1</button>

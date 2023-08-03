@@ -11,7 +11,6 @@
 
     // Hide reviews if clicking the game
     window.addEventListener('pointerup', function(e) {
-        console.log(e.t)
         if (e.target.className != 'review-button') review.value = false;
     })
 </script>

@@ -1,0 +1,11 @@
+@import './variables.scss';
+
+.version {
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 0.125rem 0.125rem #000;
+    left: 1rem;
+    position: absolute;
+    top: 1rem;
+    z-index: 2;
+}
