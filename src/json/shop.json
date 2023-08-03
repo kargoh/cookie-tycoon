@@ -6,7 +6,10 @@
         "tooltip": "Click +1",
         "scale": 1.05,
         "amount": 1,
-        "icon": "ads_click"
+        "icon": {
+            "name": "ads_click",
+            "color": "linear-gradient(135deg, #ff5722 25%, #9d00ff 100%)"
+        }
     },
     "oven": {
         "name": "Oven",
@@ -15,7 +18,10 @@
         "tooltip": "+2/s",
         "scale": 1.05,
         "amount": 1,
-        "icon": "microwave"
+        "icon": {
+            "name": "microwave",
+            "color": "linear-gradient(135deg, #ff0707 10%, #ffbc00 100%)"
+        }
     },
     "bakery": {
         "name": "Bakery",
@@ -24,7 +30,10 @@
         "tooltip": "+5/s",
         "scale": 1.05,
         "amount": 1,
-        "icon": "store"
+        "icon": {
+            "name": "store",
+            "color": "linear-gradient(135deg, #d114a0 25%, #450066 100%)"
+        }
     },
     "delivery": {
         "name": "Delivery",
@@ -33,7 +42,10 @@
         "tooltip": "+10/s",
         "scale": 1.05,
         "amount": 1,
-        "icon": "local_shipping"
+        "icon": {
+            "name": "local_shipping",
+            "color": "linear-gradient(135deg, #798b99 25%, #20282e 100%)"
+        }
     },
     "shipment": {
         "name": "Shipment",
@@ -42,7 +54,10 @@
         "tooltip": "+50/s",
         "scale": 1.05,
         "amount": 1,
-        "icon": "directions_boat"
+        "icon": {
+            "name": "directions_boat",
+            "color": "linear-gradient(180deg, #9be6ff 0%, #0064f4 100%)"
+        }
     },
     "drones": {
         "name": "Drones",
@@ -51,7 +66,10 @@
         "tooltip": "+200/s",
         "scale": 1.05,
         "amount": 1,
-        "icon": "travel"
+        "icon": {
+            "name": "travel",
+            "color": "linear-gradient(135deg, #707abf 25%, #071997 100%)"
+        }
     },
     "spaceship": {
         "name": "Spaceship",
@@ -60,7 +78,10 @@
         "tooltip": "+500/s",
         "scale": 1.05,
         "amount": 1,
-        "icon": "rocket_launch"
+        "icon": {
+            "name": "rocket_launch",
+            "color": "linear-gradient(135deg, #ff5722 25%, #9d00ff 100%)"
+        }
     },
     "moon-cookies": {
         "name": "Moon Cookies",
@@ -69,7 +90,10 @@
         "tooltip": "+1250/s",
         "scale": 1.05,
         "amount": 1,
-        "icon": "dark_mode"
+        "icon": {
+            "name": "dark_mode",
+            "color": "linear-gradient(135deg, #48677f 25%, #051622 100%)"
+        }
     },
     "moon-colony": {
         "name": "Moon Colony",
@@ -78,7 +102,10 @@
         "tooltip": "+3000/s",
         "scale": 1.05,
         "amount": 1,
-        "icon": "app_badging"
+        "icon": {
+            "name": "app_badging",
+            "color": "linear-gradient(135deg, #223dff 25%, #7a00ff 100%)"
+        }
     },
     "spaceship-enterprise": {
         "name": "Spaceship Enterprise",
@@ -87,6 +114,9 @@
         "tooltip": "+10000/s",
         "scale": 1.05,
         "amount": 1,
-        "icon": "military_tech"
+        "icon": {
+            "name": "military_tech",
+            "color": "linear-gradient(135deg, #6200ab 25%, #ff00c6 100%)"
+        }
     }
 }
