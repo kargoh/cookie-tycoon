@@ -76,6 +76,15 @@
 
 					.icon {
 						background-color: #ff5722;
+						animation: wiggle 0.5s ease-in-out;
+
+						@keyframes wiggle {
+							0% { transform: rotate(0deg) translate(-50%, -50%); }
+							25% { transform: rotate(12deg) translate(-50%, -50%); }
+							50% { transform: rotate(-8deg) translate(-50%, -50%); }
+							75% { transform: rotate(4deg) translate(-50%, -50%); }
+							100% { transform: rotate(0) translate(-50%, -50%); }
+						}
 					}
 				}
 
@@ -94,6 +103,7 @@
 					position: absolute;
 					top: 50%;
 					transform: translate(-50%, -50%);
+					transform-origin: 0% 0%;
 					transition: all 0.15s ease-in-out;
 					text-shadow: 0.125rem 0.125rem rgba(#000, 0.1);
 				}
