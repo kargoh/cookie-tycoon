@@ -110,8 +110,8 @@ class Game {
                 price = price + addPrice
             }
             
-            console.log("Add Price: ", addPrice)
-            console.log("Price: ", price)
+            //console.log("Add Price: ", addPrice)
+            //console.log("Price: ", price)
         }
         //price = Math.ceil(Math.pow(item.scale, stock + amount) * item.price);
 
