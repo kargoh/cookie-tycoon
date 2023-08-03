@@ -15,7 +15,7 @@
         "tooltip": "+2/s",
         "scale": 1.05,
         "amount": 1,
-        "icon": "range_hood"
+        "icon": "microwave"
     },
     "bakery": {
         "name": "Bakery",
@@ -24,7 +24,7 @@
         "tooltip": "+5/s",
         "scale": 1.05,
         "amount": 1,
-        "icon": "breakfast_dining"
+        "icon": "store"
     },
     "delivery": {
         "name": "Delivery",

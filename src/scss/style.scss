@@ -1,4 +1,5 @@
 @import './variables.scss';
+@import './fonts.scss';
 
 /* Global styling */
 * {
@@ -96,5 +97,3 @@ html {
 	outline: 0.25rem solid $color-primary;
 	outline-offset: -0.25rem;
 }
-
-/* Animations */
