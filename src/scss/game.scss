@@ -30,7 +30,7 @@
 				background-color: $color-primary;
 				border-radius: 99rem;
 				border: $border-width solid #ffffff;
-				box-shadow: inset 0.125rem 0.125rem rgba(#000, 0.1);
+				box-shadow: inset 0.125rem 0.125rem rgba(#000, 0.1), 0.125rem 0.125rem rgba(#000, 0.1);
 				color: #ffffff;
 				display: inline-block;
 				font-size: 1rem;
@@ -57,6 +57,7 @@
 			.rate {
 				background-color: #ffffff;
 				border-radius: 99rem;
+				box-shadow: 0.125rem 0.125rem rgba(#000, 0.1);
 				display: inline-block;
 				font-size: 1rem;
 				font-weight: bold;
@@ -66,6 +67,7 @@
 		}
 
 		button {
+			box-shadow: 0.125rem 0.125rem rgba(#000, 0.1);
 			transition: all 0.05s ease-in-out;
 			margin-bottom: 0rem;
 			position: relative;

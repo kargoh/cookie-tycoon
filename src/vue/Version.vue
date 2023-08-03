@@ -3,7 +3,7 @@
 	import '../scss/version.scss';
 
 	// Init version
-	var version = ref('');
+	var version = ref('0.0.0');
 
 	async function updateVersion() {
 		// Load version asynchronously (Vite doesn't like JSON from /public dir)
@@ -19,5 +19,5 @@
 </script>
 
 <template>
-	<div class="version">v{{ version }}</div>
+	<label class="color version">v{{ version }}</label>
 </template>
