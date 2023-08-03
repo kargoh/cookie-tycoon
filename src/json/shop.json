@@ -5,7 +5,8 @@
         "stock": -1,
         "tooltip": "Click +1",
         "scale": 1.05,
-        "amount": 1
+        "amount": 1,
+        "icon": "ads_click"
     },
     "oven": {
         "name": "Oven",
@@ -13,7 +14,8 @@
         "stock": -1,
         "tooltip": "+2/s",
         "scale": 1.05,
-        "amount": 1
+        "amount": 1,
+        "icon": "range_hood"
     },
     "bakery": {
         "name": "Bakery",
@@ -21,7 +23,8 @@
         "stock": -1,
         "tooltip": "+5/s",
         "scale": 1.05,
-        "amount": 1
+        "amount": 1,
+        "icon": "breakfast_dining"
     },
     "delivery": {
         "name": "Delivery",
@@ -29,7 +32,8 @@
         "stock": -1,
         "tooltip": "+10/s",
         "scale": 1.05,
-        "amount": 1
+        "amount": 1,
+        "icon": "local_shipping"
     },
     "shipment": {
         "name": "Shipment",
@@ -37,7 +41,8 @@
         "stock": -1,
         "tooltip": "+50/s",
         "scale": 1.05,
-        "amount": 1
+        "amount": 1,
+        "icon": "directions_boat"
     },
     "drones": {
         "name": "Drones",
@@ -45,7 +50,8 @@
         "stock": -1,
         "tooltip": "+200/s",
         "scale": 1.05,
-        "amount": 1
+        "amount": 1,
+        "icon": "travel"
     },
     "spaceship": {
         "name": "Spaceship",
@@ -53,7 +59,8 @@
         "stock": -1,
         "tooltip": "+500/s",
         "scale": 1.05,
-        "amount": 1
+        "amount": 1,
+        "icon": "rocket_launch"
     },
     "moon-cookies": {
         "name": "Moon Cookies",
@@ -61,7 +68,8 @@
         "stock": -1,
         "tooltip": "+1250/s",
         "scale": 1.05,
-        "amount": 1
+        "amount": 1,
+        "icon": "dark_mode"
     },
     "moon-colony": {
         "name": "Moon Colony",
@@ -69,7 +77,8 @@
         "stock": -1,
         "tooltip": "+3000/s",
         "scale": 1.05,
-        "amount": 1
+        "amount": 1,
+        "icon": "app_badging"
     },
     "spaceship-enterprise": {
         "name": "Spaceship Enterprise",
@@ -77,6 +86,7 @@
         "stock": -1,
         "tooltip": "+10000/s",
         "scale": 1.05,
-        "amount": 1
+        "amount": 1,
+        "icon": "military_tech"
     }
 }

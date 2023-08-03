@@ -65,6 +65,7 @@ html {
 				&.color {
 					background-color: $color-primary;
 					color: #ffffff;
+					text-shadow: 0.125rem 0.125rem rgba(#000, 0.25);
 				}
 			}
 

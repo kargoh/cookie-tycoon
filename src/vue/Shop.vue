@@ -20,9 +20,6 @@
 
 <template>
 	<div class="shop">
-		<div class="top">
-			<label>Shop</label>
-		</div>
 		<div class="shop-buttons">
 			<button @click="purchaseAmount = 1;" class="shop-button" :class="{ toggle: purchaseAmount == 1 }">Buy 1</button>
 			<button @click="purchaseAmount = 10;" class="shop-button" :class="{ toggle: purchaseAmount == 10 }">Buy 10</button>
@@ -31,6 +28,7 @@
 		<ul>
 			<li v-for="(item, key, index) of game.shop">
 				<button @click="game.purchase(key, $event, notify, purchaseAmount);" :disabled="isDisabled(key)">
+					<span class="icon material-symbols-outlined" v-if="item.icon">{{ item.icon }}</span>
 					<span class="text">{{ item.name }}</span>
 					<div class="info">
 						<span class="price">{{ isDisabled(key) ? 'Maxed' : (game.getPrice(key, purchaseAmount).toLocaleString() || 0) }}<img src="img/png/cookie.png"></span>
