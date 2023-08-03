@@ -1,4 +1,5 @@
 @import './variables.scss';
+@import './animations.scss';
 
 .game {
 	display: flex;
@@ -66,6 +67,7 @@
 				font-weight: bold;
 				margin: 0.25rem;
 				padding: 0.5rem 1rem;
+				transition: all 0.15s ease-in-out;
 
 				&.disabled {
 					opacity: 0.25;
@@ -88,10 +90,11 @@
 				width: 40vh;
 				height: 40vh;
 				max-width: 100%;
-				opacity: 0;
 				transition: all 0.15s ease-in-out;
 				position: relative;
 				pointer-events: none;
+				animation: fadeInImage 0.1s ease-in-out;
+    			animation-fill-mode: forwards;
 
 				&.star {
 					position: absolute;
@@ -111,16 +114,6 @@
 						width: 120vh;
 						height: 120vh;
 					}
-				}
-
-				@keyframes rotateClockwise {
-					0% { transform: rotate(0deg) translate(-50%, -50%); }
-					100% { transform: rotate(360deg) translate(-50%, -50%); }
-				}
-
-				@keyframes rotateCounterclockwise {
-					0% { transform: rotate(0deg) translate(-50%, -50%); }
-					100% { transform: rotate(-360deg) translate(-50%, -50%); }
 				}
 			}
 		}

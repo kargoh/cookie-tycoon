@@ -15,7 +15,7 @@
             <button class="cookie" @click="notify('+' + incrementCookie().toLocaleString(), $event)">
                 <img src="img/svg/star-2.svg" class="star" />
                 <img src="img/svg/star-1.svg" class="star" />
-                <img src="img/png/cookie.png" onload="this.style.opacity=1">
+                <img src="img/png/cookie.png">
             </button>
         </div>
     </div>
