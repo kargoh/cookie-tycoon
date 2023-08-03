@@ -5,6 +5,7 @@
 	height: inherit;
 	padding: 1rem;
 	overflow-y: scroll;
+	overflow-x: hidden;
 
 	.shop-buttons {
 		display: flex;
@@ -43,7 +44,10 @@
 		padding: 0;
 
 		li {
+			opacity: 0;
 			padding: 0;
+			animation: fadeLeft 0.5s ease-in-out;
+			animation-fill-mode: forwards;
 
 			button {
 				box-shadow: 0.125rem 0.125rem rgba(#000, 0.1);

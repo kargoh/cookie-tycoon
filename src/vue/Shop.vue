@@ -26,7 +26,7 @@
 			<button @click="purchaseAmount = 100;" class="shop-button" :class="{ toggle: purchaseAmount == 100 }">Buy 100</button>
 		</div>
 		<ul>
-			<li v-for="(item, key, index) of game.shop">
+			<li v-for="(item, key, index) of game.shop" :style="{ animationDelay: (index * 100) + 'ms' }">
 				<button @click="game.purchase(key, $event, notify, purchaseAmount);" :disabled="isDisabled(key)">
 					<span class="icon material-symbols-outlined" v-if="item.icon">{{ item.icon }}</span>
 					<span class="text">{{ item.name }}</span>

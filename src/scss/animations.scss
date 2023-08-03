@@ -3,6 +3,11 @@
     100% { opacity: 1; }
 }
 
+@keyframes fadeLeft {
+    0% { transform: translate(100%, 0%); opacity: 0; }
+    100% { transform: translate(0%, 0%); opacity: 1; }
+}
+
 @keyframes fadeUp {
     0% { transform: translate(-120%, -50%); opacity: 1; }
     100% { transform: translate(-120%, -200%); opacity: 0; }
