@@ -43,13 +43,14 @@
 				text-shadow: 0.125rem 0.125rem rgba(#000, 0.1);
 
 				img {
+					animation: fadeIn 0.5s ease-in-out;
+					animation-fill-mode: forwards;
 					width: 1.5rem;
-					height: auto;
+					height: 1.5rem;
 					background-color: #ffffff;
 					border-radius: 99rem;
 					box-sizing: content-box;
 					margin-left: 0.25rem;
-					opacity: 0;
 					padding: 0.125rem;
 					position: absolute;
 					right: 0.125rem;
@@ -93,7 +94,7 @@
 				transition: all 0.15s ease-in-out;
 				position: relative;
 				pointer-events: none;
-				animation: fadeInImage 0.1s ease-in-out;
+				animation: fadeIn 0.5s ease-in-out;
     			animation-fill-mode: forwards;
 
 				&.star {
