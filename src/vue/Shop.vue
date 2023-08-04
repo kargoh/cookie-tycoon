@@ -27,7 +27,7 @@
 		</div>
 		<ul>
 			<li v-for="(item, key, index) of game.shop" :style="{ animationDelay: (index * 100) + 'ms' }">
-				<button @click="game.purchase(key, $event, notify, purchaseAmount);" :disabled="isDisabled(key)">
+				<button @click="game.purchase(key, $event, notify, purchaseAmount); game.isPrestigeAvailable(key);" :disabled="isDisabled(key)">
 					<span class="icon material-symbols-outlined" :style="{ 'background': item.icon.color }" v-if="item.icon">{{ item.icon.name }}</span>
 					<span class="text">{{ item.name }}</span>
 					<div class="info">

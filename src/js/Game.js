@@ -57,6 +57,14 @@ class Game {
         return this.cookies;
     }
 
+    isPrestigeAvailable(key) {
+        var item = this.shop[key];
+        var stock = (this.orders[key] || 0);
+
+        console.log("Item: ", item);
+        console.log("Stock: ", stock)
+    }
+
     purchase(key, $event, notify = function(){}, shopAmount) {
         var item = this.shop[key];
         var amount = shopAmount;
@@ -105,15 +113,15 @@ class Game {
 
         // Add scale if you have stock in this item
         if (stock != 0 || amount > 1) {
-            for(let i = 0; i < amount; i++) {
-                addPrice = Math.ceil(Math.pow(item.scale, stock + i) * item.price);
-                price = price + addPrice
+            for(let i = 0; i < (amount); i++) {
+                if (i == 0) {
+                    price = Math.ceil(Math.pow(item.scale, stock + i) * item.price);
+                } else {
+                    addPrice = Math.ceil(Math.pow(item.scale, stock + i) * item.price);
+                    price = price + addPrice
+                }
             }
-            
-            //console.log("Add Price: ", addPrice)
-            //console.log("Price: ", price)
         }
-        //price = Math.ceil(Math.pow(item.scale, stock + amount) * item.price);
 
         // Return price with scale
         return price;
