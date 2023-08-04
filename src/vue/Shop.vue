@@ -16,6 +16,18 @@
 		if (stock >= shop[key].stock && shop[key].stock != -1) disabled = true;
 		return disabled;
 	}
+
+	function getToolTip(key, item) {
+		// default with no orders
+		var cookieProduction = (key != "prestige") ? game.getItemAmount(key, 1) : 1;
+
+		// if there are orders then divide amount by the orders
+		if (game.orders[key]) {
+			cookieProduction = (key != "prestige") ? (game.getItemAmount(key, 1) / game.orders[key]) : 1;
+		}
+
+		return "+" + cookieProduction + item.tooltip
+	}
 </script>
 
 <template>
@@ -34,7 +46,7 @@
 						<span class="price" v-if="item.price > 0">{{ isDisabled(key) ? 'Maxed' : (game.getPrice(key, purchaseAmount).toLocaleString() || 0) }}<img src="img/png/cookie.png"></span>
 						<span class="quantity">{{ (game.orders[key] || 0).toLocaleString() + '/' + (game.shop[key].stock != -1 ? game.shop[key].stock : '∞') }}</span>
 					</div>
-					<span class="tooltip">{{ item.tooltip }}</span>
+					<span class="tooltip">{{ getToolTip(key, item) }}</span>
 				</button>
 			</li>
 		</ul>

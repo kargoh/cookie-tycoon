@@ -12,7 +12,7 @@ class Game {
 
     increment() {
         // Define singular modifiers
-        var doubleClick = parseInt(this.orders['double-click'] || 0); // +1 for double click
+        var doubleClick = this.getItemAmount('double-click');
         var amount = 1 + doubleClick;
 
         // Update cookies and save
@@ -25,15 +25,15 @@ class Game {
 
     autoIncrement() {
         // Define automatic modifiers
-        var oven = parseInt(this.orders['oven'] || 0) * 2; // +2 for oven
-        var bakery = parseInt(this.orders['bakery'] || 0) * 5; // +5 for bakery
-        var delivery = parseInt(this.orders['delivery'] || 0) * 10; // +10 for delivery
-        var shipment = parseInt(this.orders['shipment'] || 0) * 50; // +50 for shipment
-        var drones = parseInt(this.orders['drones'] || 0) * 200; // +200 for drones
-        var spaceShip = parseInt(this.orders['spaceship'] || 0) * 500; // +500 for space ship
-        var moonCookies = parseInt(this.orders['moon-cookies'] || 0) * 1250; // +1250 for moon cookies
-        var moonColonies = parseInt(this.orders['moon-colony'] || 0) * 3000; // +3000 for moon colonies
-        var spaceshipEnterprise = parseInt(this.orders['spaceship-enterprise'] || 0) * 10000; // +10000 for spaceship enterprises
+        var oven = this.getItemAmount('oven');
+        var bakery = this.getItemAmount('bakery');
+        var delivery = this.getItemAmount('delivery');
+        var shipment = this.getItemAmount('shipment');
+        var drones = this.getItemAmount('drones');
+        var spaceShip = this.getItemAmount('spaceship');
+        var moonCookies = this.getItemAmount('moon-cookies');
+        var moonColonies = this.getItemAmount('moon-colony');
+        var spaceshipEnterprise = this.getItemAmount('spaceship-enterprise');
         var amount = oven
         + bakery
         + delivery
@@ -78,7 +78,15 @@ class Game {
     getPrestigeScale() {
         var prestigeAmount = this.orders["prestige"] || 0;
         var prestigeScale = this.shop["prestige"].scale;
+        
         return prestigeScale * (prestigeAmount + 1);
+    }
+
+    getItemAmount(key, index = 0) {
+        var scale = this.getPrestigeScale() == 100 ? 1 : (1.5 * (this.getPrestigeScale() / 100)) * .5;
+        var itemAmount = (key != "prestige") ? (parseInt(this.orders[key] || index) * this.shop[key]['cookie-production']) * scale : 1;
+
+        return itemAmount;
     }
 
     purchase(key, $event, notify = function(){}, shopAmount) {

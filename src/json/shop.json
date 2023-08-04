@@ -3,9 +3,10 @@
         "name": "Better Click",
         "price": 100,
         "stock": -1,
-        "tooltip": "Click +1",
+        "tooltip": " Click",
         "scale": 1.05,
         "amount": 1,
+        "cookie-production": 1,
         "icon": {
             "name": "ads_click",
             "color": "linear-gradient(135deg, #ff5722 25%, #9d00ff 100%)"
@@ -15,9 +16,10 @@
         "name": "Oven",
         "price": 200,
         "stock": -1,
-        "tooltip": "+2/s",
+        "tooltip": "/s",
         "scale": 1.05,
         "amount": 1,
+        "cookie-production": 2,
         "icon": {
             "name": "microwave",
             "color": "linear-gradient(135deg, #ff0707 10%, #ffbc00 100%)"
@@ -27,9 +29,10 @@
         "name": "Bakery",
         "price": 800,
         "stock": -1,
-        "tooltip": "+5/s",
+        "tooltip": "/s",
         "scale": 1.05,
         "amount": 1,
+        "cookie-production": 5,
         "icon": {
             "name": "store",
             "color": "linear-gradient(135deg, #d114a0 25%, #450066 100%)"
@@ -39,9 +42,10 @@
         "name": "Delivery",
         "price": 3000,
         "stock": -1,
-        "tooltip": "+10/s",
+        "tooltip": "/s",
         "scale": 1.05,
         "amount": 1,
+        "cookie-production": 10,
         "icon": {
             "name": "local_shipping",
             "color": "linear-gradient(135deg, #798b99 25%, #20282e 100%)"
@@ -51,9 +55,10 @@
         "name": "Shipment",
         "price": 10000,
         "stock": -1,
-        "tooltip": "+50/s",
+        "tooltip": "/s",
         "scale": 1.05,
         "amount": 1,
+        "cookie-production": 50,
         "icon": {
             "name": "directions_boat",
             "color": "linear-gradient(180deg, #9be6ff 0%, #0064f4 100%)"
@@ -63,9 +68,10 @@
         "name": "Drones",
         "price": 50000,
         "stock": -1,
-        "tooltip": "+200/s",
+        "tooltip": "/s",
         "scale": 1.05,
         "amount": 1,
+        "cookie-production": 200,
         "icon": {
             "name": "travel",
             "color": "linear-gradient(135deg, #707abf 25%, #071997 100%)"
@@ -75,9 +81,10 @@
         "name": "Spaceship",
         "price": 150000,
         "stock": -1,
-        "tooltip": "+500/s",
+        "tooltip": "/s",
         "scale": 1.05,
         "amount": 1,
+        "cookie-production": 500,
         "icon": {
             "name": "rocket_launch",
             "color": "linear-gradient(135deg, #ff5722 25%, #9d00ff 100%)"
@@ -87,9 +94,10 @@
         "name": "Moon Cookies",
         "price": 500000,
         "stock": -1,
-        "tooltip": "+1250/s",
+        "tooltip": "/s",
         "scale": 1.05,
         "amount": 1,
+        "cookie-production": 1250,
         "icon": {
             "name": "dark_mode",
             "color": "linear-gradient(135deg, #48677f 25%, #051622 100%)"
@@ -99,9 +107,10 @@
         "name": "Moon Colony",
         "price": 1000000,
         "stock": -1,
-        "tooltip": "+3000/s",
+        "tooltip": "/s",
         "scale": 1.05,
         "amount": 1,
+        "cookie-production": 3000,
         "icon": {
             "name": "app_badging",
             "color": "linear-gradient(135deg, #223dff 25%, #7a00ff 100%)"
@@ -111,9 +120,10 @@
         "name": "Spaceship Enterprise",
         "price": 2500000,
         "stock": -1,
-        "tooltip": "+10000/s",
+        "tooltip": "/s",
         "scale": 1.05,
         "amount": 1,
+        "cookie-production": 10000,
         "icon": {
             "name": "military_tech",
             "color": "linear-gradient(135deg, #6200ab 25%, #ff00c6 100%)"
@@ -124,9 +134,10 @@
         "name": "Prestige",
         "price": -1,
         "stock": -1,
-        "tooltip": "+1 prestige",
+        "tooltip": " prestige",
         "scale": 100,
         "amount": 1,
+        "cookie-production": 1,
         "icon": {
             "name": "rewarded_ads",
             "color": "linear-gradient(135deg, #eb8400 0%, #592d00 100%)"
