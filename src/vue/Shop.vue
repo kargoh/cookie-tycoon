@@ -17,6 +17,19 @@
 		return disabled;
 	}
 
+	function updateItemDescription(item) {
+		var description = item.description;
+		var index_1 = description.indexOf('#{');
+		var index_2 = description.indexOf('}');
+		var before = description.substring(0, index_1);
+		var func = description.substring(index_1 + 2, index_2);
+		var funcValue = game[func] ? game[func]() : '';
+		var after = description.substring(index_2 + 1);
+
+		// Truncate parts and call game function from JSON funcValue
+		return before + funcValue + after;
+	}
+
 	function getToolTip(key, item) {
 		// default with no orders
 		var cookieProduction = (key != "prestige") ? game.getItemAmount(key, 1) : 1;
@@ -46,6 +59,7 @@
 						<span class="price" v-if="item.price > 0">{{ isDisabled(key) ? 'Maxed' : (game.getPrice(key, purchaseAmount).toLocaleString() || 0) }}<img src="img/png/cookie.png"></span>
 						<span class="quantity">{{ (game.orders[key] || 0).toLocaleString() + '/' + (game.shop[key].stock != -1 ? game.shop[key].stock : '∞') }}</span>
 					</div>
+					<label class="description color" v-if="item.description" :style="{ 'background': item.icon.color }">{{ updateItemDescription(item) }}</label>
 					<span class="tooltip">{{ getToolTip(key, item) }}</span>
 				</button>
 			</li>

@@ -84,6 +84,11 @@
 						background-color: #ff5722;
 						animation: wiggle 0.5s ease-in-out;
 					}
+
+					.description {
+						bottom: 100%;
+						opacity: 1;
+					}
 				}
 
 				&.prestige {
@@ -154,6 +159,26 @@
 					transform: translate(-50%, -50%);
 					z-index: 999;
 				}
+				
+				.description {
+					box-shadow: inset 0.125rem 0.125rem rgba(#000, 0.2), 0.125rem 0.125rem rgba(#000, 0.2);
+					border: 0.125rem solid #ffffff;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-size: 0.75rem;
+					margin: 0;
+					white-space: wrap;
+					position: absolute;
+					left: 50%;
+					bottom: 0%;
+					width: 75%;
+					height: auto;
+					opacity: 0;
+					pointer-events: none;
+					transform: translateX(-50%);
+					transition: all 0.15s ease-in-out;
+				}
 
 				.info {
 					display: flex;
@@ -166,13 +191,13 @@
 
 					.quantity {
 						background-color: #dddddd;
-						color: #999999;
+						color: #777;
 						border-radius: 99rem;
 						display: flex;
 						align-items: center;
 						font-size: 0.75rem;
 						line-height: 1rem;
-						font-weight: bold;
+						font-weight: bolder;
 						padding: 0.25rem 0.5rem;
 					}
 
