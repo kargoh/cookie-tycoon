@@ -54,25 +54,31 @@ class Game {
     }
 
     getCookies() {
-        console.log(this.isPrestigeAvailable());
         return this.cookies;
     }
 
     isPrestigeAvailable() {
         var _this = this;
         var isPrestigable = true;
-        var prestigeAmount = this.orders["prestige"] || 0;
-        var prestigeScale = this.shop["prestige"].scale;
+        var prestigeScale = this.getPrestigeScale();
 
-        Object.keys(this.shop).forEach(function(key, index) {
+        // Loop through all shop keys to see if orders are greater than prestige scale
+        Object.keys(this.shop).forEach(function(key) {
             if (key != "prestige") {
-                if (_this.orders[key] < prestigeScale * (prestigeAmount + 1)){
+                var orders = _this.orders[key] || 0;
+                if (orders < prestigeScale){
                     isPrestigable = false;
                 }
             }
         })
 
         return isPrestigable;
+    }
+
+    getPrestigeScale() {
+        var prestigeAmount = this.orders["prestige"] || 0;
+        var prestigeScale = this.shop["prestige"].scale;
+        return prestigeScale * (prestigeAmount + 1);
     }
 
     purchase(key, $event, notify = function(){}, shopAmount) {
@@ -82,36 +88,44 @@ class Game {
         var price = this.getPrice(key, amount);
         var stock = (this.orders[key] || 0);
 
-        // TODO: Find amount from scaled price ... using ... Algebra!
-        /* if ($event.shiftKey == true) {
-            amount = Math.floor(this.cookies / Math.pow(item.scale, amount + stock));
-            if (amount == 0) amount = 1;
-        } */
+        if (key == 'prestige') {
+            if (this.isPrestigeAvailable() == true) {
+                this.cookies = 0;
+                this.orders = { prestige: (this.orders['prestige'] || 0) + 1 }
 
-        // Check if there are enough cookies
-        if (this.cookies >= price) {
-            // Purchase if the shop has inventory (or has unlimited "-1" stock)
-            if (stock < item.stock || unlimited == true) {
-                // Top-off amount size (ex: if stock = 18, and shop inventory = 20, then amount = 2)
-                if (stock + amount > item.stock && unlimited == false) {
-                    amount = item.stock - stock;
-                }
-
-                // Update cookies and orders
-                this.cookies -= price; // Subtract price from total
-                this.orders[key] = stock + amount; // Increment order stock
-
-                // Store cookies/orders in localStorage
                 localStorage.setItem('cookies', this.cookies);
                 localStorage.setItem('orders', JSON.stringify(this.orders));
-                notify('+' + amount.toLocaleString() + ' purchased', $event);
             }
             else {
-                notify('Sold out!', $event);
+                notify('Must own ' + this.getPrestigeScale() + ' of all shop items.', $event);
             }
         }
         else {
-            notify('Insufficient funds', $event);
+            // Check if there are enough cookies
+            if (this.cookies >= price) {
+                // Purchase if the shop has inventory (or has unlimited "-1" stock)
+                if (stock < item.stock || unlimited == true) {
+                    // Top-off amount size (ex: if stock = 18, and shop inventory = 20, then amount = 2)
+                    if (stock + amount > item.stock && unlimited == false) {
+                        amount = item.stock - stock;
+                    }
+    
+                    // Update cookies and orders
+                    this.cookies -= price; // Subtract price from total
+                    this.orders[key] = stock + amount; // Increment order stock
+    
+                    // Store cookies/orders in localStorage
+                    localStorage.setItem('cookies', this.cookies);
+                    localStorage.setItem('orders', JSON.stringify(this.orders));
+                    notify('+' + amount.toLocaleString() + ' purchased', $event);
+                }
+                else {
+                    notify('Sold out!', $event);
+                }
+            }
+            else {
+                notify('Insufficient funds', $event);
+            }
         }
     }
 

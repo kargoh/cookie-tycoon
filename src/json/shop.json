@@ -125,12 +125,11 @@
         "price": -1,
         "stock": -1,
         "tooltip": "+1 prestige",
-        "description": "Available when you have #{100} of each shop item",
         "scale": 100,
         "amount": 1,
         "icon": {
-            "name": "military_tech",
-            "color": "linear-gradient(135deg, #6200ab 25%, #ff00c6 100%)"
+            "name": "rewarded_ads",
+            "color": "linear-gradient(135deg, #eb8400 0%, #592d00 100%)"
         }
     }
 }

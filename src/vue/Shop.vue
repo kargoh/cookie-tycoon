@@ -27,11 +27,11 @@
 		</div>
 		<ul>
 			<li v-for="(item, key, index) of game.shop" :style="{ animationDelay: (index * 100) + 'ms' }">
-				<button @click="game.purchase(key, $event, notify, purchaseAmount);" :disabled="isDisabled(key)">
+				<button :class="key" @click="game.purchase(key, $event, notify, purchaseAmount);" :disabled="isDisabled(key)">
 					<span class="icon material-symbols-outlined" :style="{ 'background': item.icon.color }" v-if="item.icon">{{ item.icon.name }}</span>
 					<span class="text">{{ item.name }}</span>
 					<div class="info">
-						<span class="price">{{ isDisabled(key) ? 'Maxed' : (game.getPrice(key, purchaseAmount).toLocaleString() || 0) }}<img src="img/png/cookie.png"></span>
+						<span class="price" v-if="item.price > 0">{{ isDisabled(key) ? 'Maxed' : (game.getPrice(key, purchaseAmount).toLocaleString() || 0) }}<img src="img/png/cookie.png"></span>
 						<span class="quantity">{{ (game.orders[key] || 0).toLocaleString() + '/' + (game.shop[key].stock != -1 ? game.shop[key].stock : '∞') }}</span>
 					</div>
 					<span class="tooltip">{{ item.tooltip }}</span>
