@@ -54,15 +54,25 @@ class Game {
     }
 
     getCookies() {
+        console.log(this.isPrestigeAvailable());
         return this.cookies;
     }
 
-    isPrestigeAvailable(key) {
-        var item = this.shop[key];
-        var stock = (this.orders[key] || 0);
+    isPrestigeAvailable() {
+        var _this = this;
+        var isPrestigable = true;
+        var prestigeAmount = this.orders["prestige"] || 0;
+        var prestigeScale = this.shop["prestige"].scale;
 
-        console.log("Item: ", item);
-        console.log("Stock: ", stock)
+        Object.keys(this.shop).forEach(function(key, index) {
+            if (key != "prestige") {
+                if (_this.orders[key] < prestigeScale * (prestigeAmount + 1)){
+                    isPrestigable = false;
+                }
+            }
+        })
+
+        return isPrestigable;
     }
 
     purchase(key, $event, notify = function(){}, shopAmount) {
