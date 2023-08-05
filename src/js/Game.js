@@ -29,20 +29,20 @@ class Game {
         var bakery = this.getItemAmount('bakery');
         var delivery = this.getItemAmount('delivery');
         var shipment = this.getItemAmount('shipment');
-        var drones = this.getItemAmount('drones');
+        var drone = this.getItemAmount('drones');
         var spaceShip = this.getItemAmount('spaceship');
         var moonCookies = this.getItemAmount('moon-cookies');
-        var moonColonies = this.getItemAmount('moon-colony');
         var spaceshipEnterprise = this.getItemAmount('spaceship-enterprise');
+        var galacticFactory = this.getItemAmount('galactic-factory');
         var amount = oven
         + bakery
         + delivery
         + shipment
-        + drones
+        + drone
         + spaceShip
         + moonCookies
-        + moonColonies
-        + spaceshipEnterprise;
+        + spaceshipEnterprise
+        + galacticFactory;
 
         // Update cookies and save
         this.cookies = this.cookies + amount;
@@ -78,7 +78,7 @@ class Game {
     getPrestigeScale() {
         var prestigeAmount = this.orders["prestige"] || 0;
         var prestigeScale = this.shop["prestige"].scale;
-        
+
         return prestigeScale * (prestigeAmount + 1);
     }
 

@@ -115,7 +115,7 @@
         "name": "Spaceship Enterprise",
         "price": 1500000,
         "stock": -1,
-        "description": "You've invested in more efficient space travel to take your cookies beyond our solar system!",
+        "description": "You invest in more efficient space travel to take your cookies beyond our solar system!",
         "tooltip": "/s",
         "scale": 1.05,
         "amount": 1,
@@ -125,11 +125,11 @@
             "color": "linear-gradient(135deg, #6200ab 25%, #ff00c6 100%)"
         }
     },
-    "moon-colony": {
-        "name": "Galaxy Colony",
+    "galactic-factory": {
+        "name": "Galactic Factory",
         "price": 3500000,
         "stock": -1,
-        "description": "You're cookies take over our galaxy and begin making colonies throughout the galaxies!",
+        "description": "You create factories to supply your cookies across the galaxies!",
         "tooltip": "/s",
         "scale": 1.05,
         "amount": 1,
