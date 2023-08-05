@@ -3,7 +3,7 @@
         "name": "Better Click",
         "price": 100,
         "stock": -1,
-        "description": "Make more with every click.",
+        "description": "Make more with every click!",
         "tooltip": " Click",
         "scale": 1.05,
         "amount": 1,
@@ -17,7 +17,7 @@
         "name": "Oven",
         "price": 200,
         "stock": -1,
-        "description": "...",
+        "description": "Finally your own oven to make more cookies!",
         "tooltip": "/s",
         "scale": 1.05,
         "amount": 1,
@@ -31,7 +31,7 @@
         "name": "Bakery",
         "price": 800,
         "stock": -1,
-        "description": "...",
+        "description": "Open your own bakery to spread you cookies around the neighborhood!",
         "tooltip": "/s",
         "scale": 1.05,
         "amount": 1,
@@ -45,7 +45,7 @@
         "name": "Delivery",
         "price": 3000,
         "stock": -1,
-        "description": "...",
+        "description": "You can now deliver to other cities with your own trucks!",
         "tooltip": "/s",
         "scale": 1.05,
         "amount": 1,
@@ -59,7 +59,7 @@
         "name": "Shipment",
         "price": 10000,
         "stock": -1,
-        "description": "...",
+        "description": "You've broken international waters and can sell your cookies across the world!",
         "tooltip": "/s",
         "scale": 1.05,
         "amount": 1,
@@ -70,10 +70,10 @@
         }
     },
     "drones": {
-        "name": "Drones",
+        "name": "Drone",
         "price": 50000,
         "stock": -1,
-        "description": "...",
+        "description": "Deliver cookies right to people's doorsteps with your state of the art drones!",
         "tooltip": "/s",
         "scale": 1.05,
         "amount": 1,
@@ -87,7 +87,7 @@
         "name": "Spaceship",
         "price": 150000,
         "stock": -1,
-        "description": "...",
+        "description": "You've conquered Earth with your cookies. Now you aim for the stars!",
         "tooltip": "/s",
         "scale": 1.05,
         "amount": 1,
@@ -98,10 +98,10 @@
         }
     },
     "moon-cookies": {
-        "name": "Moon Cookies",
+        "name": "Moon Cookie",
         "price": 500000,
         "stock": -1,
-        "description": "...",
+        "description": "You've landed on the moon and your cookies taste extraterrestial!",
         "tooltip": "/s",
         "scale": 1.05,
         "amount": 1,
@@ -111,35 +111,34 @@
             "color": "linear-gradient(135deg, #48677f 25%, #051622 100%)"
         }
     },
-    "moon-colony": {
-        "name": "Moon Colony",
-        "price": 1000000,
+    "spaceship-enterprise": {
+        "name": "Spaceship Enterprise",
+        "price": 1500000,
         "stock": -1,
-        "description": "...",
+        "description": "You've invested in more efficient space travel to take your cookies beyond our solar system!",
         "tooltip": "/s",
         "scale": 1.05,
         "amount": 1,
         "cookie-production": 3000,
         "icon": {
-            "name": "app_badging",
-            "color": "linear-gradient(135deg, #223dff 25%, #7a00ff 100%)"
+            "name": "military_tech",
+            "color": "linear-gradient(135deg, #6200ab 25%, #ff00c6 100%)"
         }
     },
-    "spaceship-enterprise": {
-        "name": "Spaceship Enterprise",
-        "price": 2500000,
+    "moon-colony": {
+        "name": "Galaxy Colony",
+        "price": 3500000,
         "stock": -1,
-        "description": "...",
+        "description": "You're cookies take over our galaxy and begin making colonies throughout the galaxies!",
         "tooltip": "/s",
         "scale": 1.05,
         "amount": 1,
         "cookie-production": 10000,
         "icon": {
-            "name": "military_tech",
-            "color": "linear-gradient(135deg, #6200ab 25%, #ff00c6 100%)"
+            "name": "app_badging",
+            "color": "linear-gradient(135deg, #223dff 25%, #7a00ff 100%)"
         }
-    }
-    ,
+    },
     "prestige": {
         "name": "Prestige",
         "price": -1,
