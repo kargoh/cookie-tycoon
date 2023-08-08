@@ -34,6 +34,11 @@
 		// default with no orders
 		var cookieProduction = (key != "prestige") ? game.getItemAmount(key, 1) : 1;
 
+		// if there are orders then divide amount by the orders
+		if (game.orders[key]) {
+			cookieProduction = (key != "prestige") ? (game.getItemAmount(key, 1) / game.orders[key]) : 1;
+		}
+
 		return "+" + cookieProduction + item.tooltip
 	}
 </script>
@@ -54,7 +59,7 @@
 						<span class="price" v-if="item.price > 0">{{ isDisabled(key) ? 'Maxed' : (game.getPrice(key, purchaseAmount).toLocaleString() || 0) }}<img src="img/png/cookie.png"></span>
 						<span class="quantity">{{ (game.orders[key] || 0).toLocaleString() + '/' + (game.shop[key].stock != -1 ? game.shop[key].stock : '∞') }}</span>
 					</div>
-					<label class="description color" v-if="item.description" :style="{ 'background': item.icon.color }">{{ updateItemDescription(item) }}</label>
+					<label class="description color" v-if="item.description" :style="{ 'background': item.icon.color }" v-html="updateItemDescription(item)"></label>
 					<span class="tooltip">{{ getToolTip(key, item) }}</span>
 				</button>
 			</li>

@@ -143,7 +143,7 @@
         "name": "Prestige",
         "price": -1,
         "stock": -1,
-        "description": "Available when you have #{getPrestigeScale} of each shop item.",
+        "description": "<p>Available when you have #{getPrestigeScale} of each shop item.</p><p>You will gain +1 prestige and all progress will reset to zero.</p>",
         "tooltip": " prestige",
         "scale": 100,
         "amount": 1,
