@@ -7,7 +7,7 @@
     import Notifications from './Notifications.vue';
     import Shop from './Shop.vue';
 	import Review from './Review.vue';
-	import Version from './Version.vue';
+	import Menu from './Menu.vue';
 
 	// Initialize Vue variables
     var game = ref(window.game = new Game());
@@ -68,13 +68,13 @@
 		<div class="content">
 			<Cookie :cookies="game.getCookies()" :rate="game.rate" :increment-cookie="incrementCookie" :notify="notify" />
 		</div>
-		<div class="menu">
+		<div class="aside">
 			<Shop :game="game" :notify="notify" />
 		</div>
 		<div class="notifications">
 			<Notifications ref="notifications" />
 		</div>
+		<Menu />
 		<Review />
-		<Version />
 	</div>
 </template>
