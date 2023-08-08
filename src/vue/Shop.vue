@@ -34,11 +34,6 @@
 		// default with no orders
 		var cookieProduction = (key != "prestige") ? game.getItemAmount(key, 1) : 1;
 
-		// if there are orders then divide amount by the orders
-		if (game.orders[key]) {
-			cookieProduction = (key != "prestige") ? (game.getItemAmount(key, 1) / game.orders[key]) : 1;
-		}
-
 		return "+" + cookieProduction + item.tooltip
 	}
 </script>
