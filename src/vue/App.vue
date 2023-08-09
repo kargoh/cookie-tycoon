@@ -1,6 +1,6 @@
 <script setup>
 	import '../scss/style.scss';
-	import { ref, onMounted } from 'vue';
+	import { ref, onMounted, watch } from 'vue';
     import { Game } from '../js/Game.js';
     import Cookie from './Cookie.vue';
     import Background from './Background.vue';
@@ -10,6 +10,7 @@
 	import Menu from './Menu.vue';
 
 	// Initialize Vue variables
+	var ui = ref();
     var game = ref(window.game = new Game());
     var background = ref();
     var notifications = ref();
@@ -54,6 +55,15 @@
 		});
 	}
 
+	watch(ui, function(target) {
+		// Check if UI element is 640x360 (min width/height defined in style.scss)
+		if (target.offsetWidth == 640 && target.offsetHeight == 360) {
+			var popup = document.getElementById('app');
+			popup.style.width = '640px';
+			popup.style.height = '360px';
+		}
+	})
+
 	onMounted(() => {
 		autoIncrement();
 		purchaseAmountToggle();
@@ -61,7 +71,7 @@
 </script>
 
 <template>
-	<div class="ui">
+	<div ref="ui" class="ui">
 		<div class="background">
 			<Background ref="background" />
 		</div>
