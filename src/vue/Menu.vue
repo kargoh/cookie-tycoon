@@ -54,7 +54,7 @@
 				<ul>
 					<li v-for="(item, key, index) of game.shop" :style="{ animationDelay: (index * 50) + 'ms' }">
 						<span class="icon material-symbols-outlined" :style="{ 'background': item.icon.color }" v-if="item.icon">{{ item.icon.name }}</span>
-						<span class="text">{{ item.name }}: {{ game.getItemAmount(key) }}{{ item.tooltip }}</span>
+						<span class="text">{{ item.name }}: +{{ game.getItemAmount(key) }}{{ item.tooltip }}</span>
 					</li>
 				</ul>
 			</li>
