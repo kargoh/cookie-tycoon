@@ -4,6 +4,7 @@
 
 	// Init refs
 	var isOpen = ref(false)
+	var props = defineProps(['game']);
 	var version = ref('0.0.0');
 
 	async function updateVersion() {
@@ -21,6 +22,10 @@
 		if (chrome.tabs) chrome.tabs.create({ url: location.href });
 		else window.open(location.href, '_blank');
     }
+
+	function getCookieStats(key) {
+
+	}
 	
 	onMounted(async () => {
 		updateVersion();
@@ -40,6 +45,15 @@
 				<button @click="openFullscreen()">
 					<span class="material-symbols-outlined">fullscreen</span> Open Fullscreen
 				</button>
+			</li>
+			<li class="stats">
+				<div class="label"><span class="material-symbols-outlined">bar_chart</span> Cookie cookieProduction</div>
+				<ul>
+					<li v-for="(item, key, index) of game.shop" :style="{ animationDelay: (index * 100) + 'ms' }">
+						<span class="icon material-symbols-outlined" v-if="item.icon">{{ item.icon.name }}</span>
+						<span class="text">{{ item.name }}: {{ (game.getItemAmount(key)) || 0 }}</span>
+					</li>
+				</ul>
 			</li>
 		</ul>
 	</div>

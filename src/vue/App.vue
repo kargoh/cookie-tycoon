@@ -74,7 +74,7 @@
 		<div class="notifications">
 			<Notifications ref="notifications" />
 		</div>
-		<Menu />
+		<Menu :game="game" />
 		<Review />
 	</div>
 </template>

@@ -117,7 +117,7 @@
         "stock": -1,
         "description": "You invest in more efficient space travel to take your cookies beyond our solar system!",
         "tooltip": "/s",
-        "scale": 1.05,
+        "scale": 1.06,
         "amount": 1,
         "cookie-production": 3000,
         "icon": {
@@ -131,7 +131,7 @@
         "stock": -1,
         "description": "You create factories to supply your cookies across the galaxies!",
         "tooltip": "/s",
-        "scale": 1.05,
+        "scale": 1.07,
         "amount": 1,
         "cookie-production": 10000,
         "icon": {
