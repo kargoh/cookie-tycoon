@@ -22,12 +22,6 @@
 		if (chrome.tabs) chrome.tabs.create({ url: location.href });
 		else window.open(location.href, '_blank');
     }
-
-	function getStat(key, item) {
-		// default with no orders
-		var cookieProduction = (key != "prestige") ? game.getItemAmount(key) : 0;
-		return item.name +": +" + (cookieProduction).toLocaleString() + item.tooltip
-	}
 	
 	onMounted(async () => {
 		updateVersion();
