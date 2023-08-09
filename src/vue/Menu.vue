@@ -23,8 +23,10 @@
 		else window.open(location.href, '_blank');
     }
 
-	function getCookieStats(key) {
-
+	function getStat(key, item) {
+		// default with no orders
+		var cookieProduction = (key != "prestige") ? game.getItemAmount(key, 1) : 1;
+		return "+" + (cookieProduction).toLocaleString() + item.tooltip
 	}
 	
 	onMounted(async () => {
@@ -38,6 +40,7 @@
 			<label class="color">
 				<span class="material-symbols-outlined">settings</span>
 				<span class="version">v{{ version }}</span>
+				<span class="close"><span class="material-symbols-outlined">close</span></span>
 			</label>
 		</button>
 		<ul class="nav" :class="{ visible: isOpen == true }">
@@ -47,11 +50,11 @@
 				</button>
 			</li>
 			<li class="stats">
-				<div class="label"><span class="material-symbols-outlined">bar_chart</span> Cookie cookieProduction</div>
+				<div class="label"><span class="material-symbols-outlined">bar_chart</span> Cookie Production</div>
 				<ul>
 					<li v-for="(item, key, index) of game.shop" :style="{ animationDelay: (index * 100) + 'ms' }">
-						<span class="icon material-symbols-outlined" v-if="item.icon">{{ item.icon.name }}</span>
-						<span class="text">{{ item.name }}: {{ (game.getItemAmount(key)) || 0 }}</span>
+						<span class="icon material-symbols-outlined" :style="{ 'background': item.icon.color }" v-if="item.icon">{{ item.icon.name }}</span>
+						<span class="text">{{ item.name }}: {{ getStat(key, item) }}</span>
 					</li>
 				</ul>
 			</li>

@@ -39,7 +39,7 @@
 			cookieProduction = (key != "prestige") ? (game.getItemAmount(key, 1) / game.orders[key]) : 1;
 		}
 
-		return "+" + cookieProduction + item.tooltip
+		return "+" + (cookieProduction).toLocaleString() + item.tooltip
 	}
 </script>
 
