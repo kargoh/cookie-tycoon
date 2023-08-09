@@ -81,7 +81,7 @@ class Game {
 
     getItemAmount(key, index = 0) {
         // Note: "prestige" amount does not scale by "cookie-production"
-        var itemAmount = (key != "prestige") ? (parseInt(this.orders[key] || index) * this.shop[key]['cookie-production']) : 1;
+        var itemAmount = (key != "prestige") ? (parseInt(this.orders[key] || index) * this.shop[key]['cookie-production']) : 0;
         return itemAmount;
     }
 

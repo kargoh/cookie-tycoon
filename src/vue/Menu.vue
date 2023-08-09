@@ -25,8 +25,8 @@
 
 	function getStat(key, item) {
 		// default with no orders
-		var cookieProduction = (key != "prestige") ? game.getItemAmount(key, 1) : 1;
-		return "+" + (cookieProduction).toLocaleString() + item.tooltip
+		var cookieProduction = (key != "prestige") ? game.getItemAmount(key) : 0;
+		return item.name +": +" + (cookieProduction).toLocaleString() + item.tooltip
 	}
 	
 	onMounted(async () => {
@@ -52,9 +52,9 @@
 			<li class="stats">
 				<div class="label"><span class="material-symbols-outlined">bar_chart</span> Cookie Production</div>
 				<ul>
-					<li v-for="(item, key, index) of game.shop" :style="{ animationDelay: (index * 100) + 'ms' }">
+					<li v-for="(item, key, index) of game.shop" :style="{ animationDelay: (index * 50) + 'ms' }">
 						<span class="icon material-symbols-outlined" :style="{ 'background': item.icon.color }" v-if="item.icon">{{ item.icon.name }}</span>
-						<span class="text">{{ item.name }}: {{ getStat(key, item) }}</span>
+						<span class="text">{{ item.name }}: {{ game.getItemAmount(key) }}{{ item.tooltip }}</span>
 					</li>
 				</ul>
 			</li>
