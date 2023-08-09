@@ -172,10 +172,13 @@
 
                     li {
                         align-items: center;
+                        animation: fadeRight 0.5s ease-in-out;
+                        animation-fill-mode: forwards;
                         border: none;
                         box-shadow: none;
                         column-gap: 0.5rem;
                         display: flex;
+                        opacity: 0;
                         padding: 0rem 0.25rem 0.25rem 2.25rem;
 
                         .material-symbols-outlined {
