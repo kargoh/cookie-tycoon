@@ -23,8 +23,8 @@
         "amount": 1,
         "cookie-production": 2,
         "unlock": {
-            "item": "double-click",
-            "amount": 10
+            "item": "",
+            "amount": 0
         },
         "icon": {
             "name": "microwave",
@@ -40,6 +40,10 @@
         "scale": 1.05,
         "amount": 1,
         "cookie-production": 5,
+        "unlock": {
+            "item": "oven",
+            "amount": 10
+        },
         "icon": {
             "name": "store",
             "color": "linear-gradient(135deg, #d114a0 25%, #450066 100%)"
@@ -54,6 +58,10 @@
         "scale": 1.05,
         "amount": 1,
         "cookie-production": 10,
+        "unlock": {
+            "item": "bakery",
+            "amount": 10
+        },
         "icon": {
             "name": "local_shipping",
             "color": "linear-gradient(135deg, #798b99 25%, #20282e 100%)"
@@ -68,6 +76,10 @@
         "scale": 1.05,
         "amount": 1,
         "cookie-production": 50,
+        "unlock": {
+            "item": "delivery",
+            "amount": 10
+        },
         "icon": {
             "name": "directions_boat",
             "color": "linear-gradient(180deg, #9be6ff 0%, #0064f4 100%)"
@@ -82,6 +94,10 @@
         "scale": 1.05,
         "amount": 1,
         "cookie-production": 200,
+        "unlock": {
+            "item": "shipment",
+            "amount": 10
+        },
         "icon": {
             "name": "travel",
             "color": "linear-gradient(135deg, #707abf 25%, #071997 100%)"
@@ -96,6 +112,10 @@
         "scale": 1.05,
         "amount": 1,
         "cookie-production": 500,
+        "unlock": {
+            "item": "drones",
+            "amount": 10
+        },
         "icon": {
             "name": "rocket_launch",
             "color": "linear-gradient(135deg, #ff5722 25%, #9d00ff 100%)"
@@ -110,6 +130,10 @@
         "scale": 1.05,
         "amount": 1,
         "cookie-production": 1250,
+        "unlock": {
+            "item": "spaceship",
+            "amount": 10
+        },
         "icon": {
             "name": "dark_mode",
             "color": "linear-gradient(135deg, #48677f 25%, #051622 100%)"
@@ -124,6 +148,10 @@
         "scale": 1.06,
         "amount": 1,
         "cookie-production": 3000,
+        "unlock": {
+            "item": "moon-cookies",
+            "amount": 10
+        },
         "icon": {
             "name": "military_tech",
             "color": "linear-gradient(135deg, #6200ab 25%, #ff00c6 100%)"
@@ -138,6 +166,10 @@
         "scale": 1.07,
         "amount": 1,
         "cookie-production": 10000,
+        "unlock": {
+            "item": "spaceship-enterprise",
+            "amount": 10
+        },
         "icon": {
             "name": "app_badging",
             "color": "linear-gradient(135deg, #223dff 25%, #7a00ff 100%)"
