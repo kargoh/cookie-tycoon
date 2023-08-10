@@ -76,16 +76,12 @@ class Game {
     }
 
     getPrestigeScale() {
-        var prestigeAmount = this.orders["prestige"] || 0;
-        var prestigeScale = this.shop["prestige"].scale;
-
-        return prestigeScale * (prestigeAmount + 1);
+        return this.shop["prestige"].scale;
     }
 
     getItemAmount(key, index = 0) {
-        var scale = this.getPrestigeScale() == 50 ? 1 : (2 * (this.getPrestigeScale() / 100));
-        var itemAmount = (key != "prestige") ? (parseInt(this.orders[key] || index) * this.shop[key]['cookie-production']) * scale : 1;
-
+        // Note: "prestige" amount does not scale by "cookie-production"
+        var itemAmount = (key != "prestige") ? (parseInt(this.orders[key] || index) * this.shop[key]['cookie-production']) : 0;
         return itemAmount;
     }
 

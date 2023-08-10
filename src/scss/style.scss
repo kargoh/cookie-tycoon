@@ -13,29 +13,28 @@ html {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: clamp(16px, 2vh, 32px);
 	line-height: clamp(16px, 2vh, 32px);
-	min-width: 640px;
-	min-height: 360px;
+	overflow: hidden;
 
 	body {
 		margin: 0;
 		background-color: #f1f1f1;
 		background: linear-gradient(180deg, #9be6ff 0%, #0064f4 100%);
 		font-size: 1rem;
-		height: 100vh;
 		overflow: hidden;
-		width: 100vw;
 
 		#app {
-			height: 100%;
-			width: 100%;
+			min-width: 640px;
+			min-height: 360px;
+			width: 100vw;
+			height: 100vh;
 		}
 
 		// Global styling
 		.ui {
 			display: flex;
 			position: relative;
-			width: inherit;
 			height: inherit;
+			width: inherit;
 			overflow: hidden;
 
 			.content {
@@ -45,7 +44,7 @@ html {
 				flex-grow: 1;
 			}
 
-			.menu {
+			.aside {
 				height: inherit;
 				max-width: 50%;
 				width: 100%; 
