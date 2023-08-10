@@ -23,7 +23,7 @@
         "amount": 1,
         "cookie-production": 2,
         "unlock": {
-            "item": "double-click",
+            "key": "double-click",
             "amount": 1
         },
         "icon": {
@@ -41,7 +41,7 @@
         "amount": 1,
         "cookie-production": 5,
         "unlock": {
-            "item": "oven",
+            "key": "oven",
             "amount": 10
         },
         "icon": {
@@ -59,7 +59,7 @@
         "amount": 1,
         "cookie-production": 10,
         "unlock": {
-            "item": "bakery",
+            "key": "bakery",
             "amount": 10
         },
         "icon": {
@@ -77,7 +77,7 @@
         "amount": 1,
         "cookie-production": 50,
         "unlock": {
-            "item": "delivery",
+            "key": "delivery",
             "amount": 10
         },
         "icon": {
@@ -95,7 +95,7 @@
         "amount": 1,
         "cookie-production": 200,
         "unlock": {
-            "item": "shipment",
+            "key": "shipment",
             "amount": 10
         },
         "icon": {
@@ -113,7 +113,7 @@
         "amount": 1,
         "cookie-production": 500,
         "unlock": {
-            "item": "drones",
+            "key": "drones",
             "amount": 10
         },
         "icon": {
@@ -131,7 +131,7 @@
         "amount": 1,
         "cookie-production": 1250,
         "unlock": {
-            "item": "spaceship",
+            "key": "spaceship",
             "amount": 10
         },
         "icon": {
@@ -149,7 +149,7 @@
         "amount": 1,
         "cookie-production": 3000,
         "unlock": {
-            "item": "moon-cookies",
+            "key": "moon-cookies",
             "amount": 10
         },
         "icon": {
@@ -167,7 +167,7 @@
         "amount": 1,
         "cookie-production": 10000,
         "unlock": {
-            "item": "spaceship-enterprise",
+            "key": "spaceship-enterprise",
             "amount": 10
         },
         "icon": {

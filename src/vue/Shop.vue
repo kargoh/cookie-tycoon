@@ -6,7 +6,7 @@
 	var props = defineProps(['game', 'notify']);
 	var purchaseAmount = ref(1);
 
-	function isDisabled(key) {
+	function isDisabled(key, item) {
 		var disabled = false;
 		var shop = props['game'].shop;
 		var orders = props['game'].orders;
@@ -14,6 +14,7 @@
 
 		// Disable if player stock is >= shop.json stock
 		if (stock >= shop[key].stock && shop[key].stock != -1) disabled = true;
+		if (isUnlocked(item) == false) disabled = true;
 		return disabled;
 	}
 
@@ -41,6 +42,27 @@
 
 		return "+" + (cookieProduction).toLocaleString() + item.tooltip
 	}
+
+	function isUnlocked(item) {
+		var orders = props['game'].orders;
+		var unlocked = false;
+		
+		// Check if item unlock exists (default null)
+		if (item && item.unlock) {
+			var orderAmount = (orders[item.unlock.key] || 0);
+			var unlockAmount = item.unlock.amount;
+
+			// Check if the order amount is greater than the unlock amount
+			if (orderAmount >= unlockAmount) {
+				unlocked = true;
+			}
+		}
+		else {
+			unlocked = true;
+		}
+
+		return unlocked;
+	}
 </script>
 
 <template>
@@ -52,15 +74,24 @@
 		</div>
 		<ul>
 			<li v-for="(item, key, index) of game.shop" :style="{ animationDelay: (index * 100) + 'ms' }">
-				<button :class="key" @click="game.purchase(key, $event, notify, purchaseAmount);" :disabled="isDisabled(key)">
-					<span class="icon material-symbols-outlined" :style="{ 'background': item.icon.color }" v-if="item.icon">{{ item.icon.name }}</span>
-					<span class="text">{{ item.name }}</span>
-					<div class="info">
-						<span class="price" v-if="item.price > 0">{{ isDisabled(key) ? 'Maxed' : (game.getPrice(key, purchaseAmount).toLocaleString() || 0) }}<img src="img/png/cookie.png"></span>
-						<span class="quantity">{{ (game.orders[key] || 0).toLocaleString() + '/' + (game.shop[key].stock != -1 ? game.shop[key].stock : '∞') }}</span>
-					</div>
-					<label class="description color" v-if="item.description" :style="{ 'background': item.icon.color }" v-html="updateItemDescription(item)"></label>
-					<span class="tooltip">{{ getToolTip(key, item) }}</span>
+				<button :class="key" @click="game.purchase(key, $event, notify, purchaseAmount);" :disabled="isDisabled(key, item)">
+					<template v-if="isUnlocked(item)">
+						<span class="icon material-symbols-outlined" :style="{ 'background': item.icon.color }" v-if="item.icon">{{ item.icon.name }}</span>
+						<span class="text">{{ item.name }}</span>
+						<div class="info">
+							<span class="price" v-if="item.price > 0">{{ (game.getPrice(key, purchaseAmount).toLocaleString() || 0) }}<img src="img/png/cookie.png"></span>
+							<span class="quantity">{{ (game.orders[key] || 0).toLocaleString() + '/' + (game.shop[key].stock != -1 ? game.shop[key].stock : '∞') }}</span>
+						</div>
+						<label class="description color" v-if="item.description" :style="{ 'background': item.icon.color }" v-html="updateItemDescription(item)"></label>
+						<span class="tooltip">{{ getToolTip(key, item) }}</span>
+					</template>
+					<template v-else>
+						<span class="icon material-symbols-outlined" :style="{ 'background': item.icon.color }" v-if="item.icon">lock</span>
+						<span class="text">{{ item.name }}</span>
+						<label class="description color" v-if="item.unlock" :style="{ 'background': item.icon.color }">
+							Unlock after purchasing {{ item.unlock.amount }} "{{ game.shop[item.unlock.key].name }}" items.
+						</label>
+					</template>
 				</button>
 			</li>
 		</ul>
