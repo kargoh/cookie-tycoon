@@ -22,6 +22,10 @@
         "scale": 1.05,
         "amount": 1,
         "cookie-production": 2,
+        "unlock": {
+            "item": "double-click",
+            "amount": 10
+        },
         "icon": {
             "name": "microwave",
             "color": "linear-gradient(135deg, #ff0707 10%, #ffbc00 100%)"
