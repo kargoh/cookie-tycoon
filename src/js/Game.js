@@ -12,7 +12,7 @@ class Game {
 
     increment() {
         // Define singular modifiers
-        var doubleClick = this.getItemAmount('double-click');
+        var doubleClick = this.getItemAmount('better-click');
         var amount = 1 + doubleClick;
 
         // Update cookies and save
@@ -81,7 +81,8 @@ class Game {
 
     getItemAmount(key, index = 0) {
         // Note: "prestige" amount does not scale by "cookie-production"
-        var itemAmount = (key != "prestige") ? (parseInt(this.orders[key] || index) * this.shop[key]['cookie-production']) : 0;
+        var orders = (this.orders[key] || index);
+        var itemAmount = (key != "prestige") ? (parseInt(orders) * this.shop[key]['cookie-production']) : orders;
         return itemAmount;
     }
 
