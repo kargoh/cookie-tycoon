@@ -1,5 +1,5 @@
 {
-    "double-click": {
+    "better-click": {
         "name": "Better Click",
         "price": 100,
         "stock": -1,
@@ -23,7 +23,7 @@
         "amount": 1,
         "cookie-production": 2,
         "unlock": {
-            "key": "double-click",
+            "key": "better-click",
             "amount": 1
         },
         "icon": {
@@ -42,7 +42,7 @@
         "cookie-production": 5,
         "unlock": {
             "key": "oven",
-            "amount": 10
+            "amount": 5
         },
         "icon": {
             "name": "store",
@@ -60,7 +60,7 @@
         "cookie-production": 10,
         "unlock": {
             "key": "bakery",
-            "amount": 10
+            "amount": 5
         },
         "icon": {
             "name": "local_shipping",
@@ -114,7 +114,7 @@
         "cookie-production": 500,
         "unlock": {
             "key": "drones",
-            "amount": 10
+            "amount": 15
         },
         "icon": {
             "name": "rocket_launch",
@@ -132,7 +132,7 @@
         "cookie-production": 1250,
         "unlock": {
             "key": "spaceship",
-            "amount": 10
+            "amount": 15
         },
         "icon": {
             "name": "dark_mode",
@@ -150,7 +150,7 @@
         "cookie-production": 3000,
         "unlock": {
             "key": "moon-cookies",
-            "amount": 10
+            "amount": 20
         },
         "icon": {
             "name": "military_tech",
@@ -168,7 +168,7 @@
         "cookie-production": 10000,
         "unlock": {
             "key": "spaceship-enterprise",
-            "amount": 10
+            "amount": 25
         },
         "icon": {
             "name": "app_badging",
