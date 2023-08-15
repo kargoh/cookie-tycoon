@@ -6,6 +6,22 @@
 	var props = defineProps(['game', 'notify']);
 	var purchaseAmount = ref(1);
 
+	function incrementPurchaseAmount(amount) {
+		purchaseAmount.value = parseInt(purchaseAmount.value) + parseInt(amount);
+		updatePurchaseAmount();
+	}
+
+	function updatePurchaseAmount() {
+		// Strip non-numeric values from input
+		if (typeof purchaseAmount.value == 'string') {
+			purchaseAmount.value = (purchaseAmount.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1'));
+		}
+
+		// Clamp purchaseAmount to a min/max range
+		if (purchaseAmount.value < 1) purchaseAmount.value = 1;
+		if (purchaseAmount.value > 999) purchaseAmount.value = 999;
+	}
+
 	function isDisabled(key, item) {
 		var disabled = false;
 		var shop = props['game'].shop;
@@ -67,10 +83,13 @@
 
 <template>
 	<div class="shop">
-		<div class="shop-buttons">
-			<button @click="purchaseAmount = 1;" class="shop-button" :class="{ toggle: purchaseAmount == 1 }">Buy 1</button>
-			<button @click="purchaseAmount = 10;" class="shop-button" :class="{ toggle: purchaseAmount == 10 }">Buy 10</button>
-			<button @click="purchaseAmount = 100;" class="shop-button" :class="{ toggle: purchaseAmount == 100 }">Buy 100</button>
+		<div class="purchase-amount">
+			<label for="purchaseAmount">Purchase Amount:</label>
+			<div class="field">
+				<button class="increment subtract" @click="incrementPurchaseAmount(-1)" tabindex="-1"><span class="material-symbols-outlined">remove</span></button>
+				<input id="purchaseAmount" type="text" min="1" max="999" step="1" v-model="purchaseAmount" @input="updatePurchaseAmount()" @focus="$event.target.select()" @keyup.enter="$event.target.blur();">
+				<button class="increment add" @click="incrementPurchaseAmount(1)" tabindex="-1"><span class="material-symbols-outlined">add</span></button>
+			</div>
 		</div>
 		<ul>
 			<li v-for="(item, key, index) of game.shop" :style="{ animationDelay: (index * 100) + 'ms' }">

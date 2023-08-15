@@ -89,7 +89,7 @@ html {
 ::-webkit-scrollbar-thumb:hover { background: rgba(#ffffff, 1); border: 0rem solid transparent; background-clip: content-box; }
 
 /* Selected text */
-::selection { background: $color-primary; }
+::selection { background: $color-primary; color: #fff; text-shadow: 0.0625rem 0.0625rem rgba(#000, 0.2); }
 
 /* Focus */
 *:focus-visible {
