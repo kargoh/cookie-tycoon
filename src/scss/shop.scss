@@ -9,6 +9,8 @@
 
 	.purchase-amount {
 		display: flex;
+		justify-content: flex-end;
+		margin: 0rem auto 1rem;
 		margin-bottom: 1rem; 
 		
 		label {
@@ -17,7 +19,6 @@
 			align-items: center;
 			justify-content: center;
 			font-size: 0.75rem;
-			flex-grow: 1;
 			height: 2rem;
 			margin: 0 0.5rem 0 0;
 			padding: 0rem 1rem;
@@ -62,10 +63,10 @@
 			input {
 				border: none;
 				margin: 0;
-				width: 3rem;
+				width: 2rem;
 				outline: none;
 				text-align: center;
-				padding: 0rem 0.5rem;
+				padding: 0rem;
 			}
 		}
 		

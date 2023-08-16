@@ -16,6 +16,9 @@
 		if (typeof purchaseAmount.value == 'string') {
 			purchaseAmount.value = (purchaseAmount.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1'));
 		}
+		
+		// Parse to an int if it is not empty (backspace can cause empty string)
+		if (purchaseAmount.value) purchaseAmount.value = parseInt(purchaseAmount.value);
 
 		// Clamp purchaseAmount to a min/max range
 		if (purchaseAmount.value < 1) purchaseAmount.value = 1;
@@ -84,7 +87,7 @@
 <template>
 	<div class="shop">
 		<div class="purchase-amount">
-			<label for="purchaseAmount">Purchase Amount:</label>
+			<label for="purchaseAmount">Quantity:</label>
 			<div class="field">
 				<button class="increment subtract" @click="incrementPurchaseAmount(-1)" tabindex="-1"><span class="material-symbols-outlined">remove</span></button>
 				<input id="purchaseAmount" type="text" min="1" max="999" step="1" v-model="purchaseAmount" @input="updatePurchaseAmount()" @focus="$event.target.select()" @keyup.enter="$event.target.blur();">
