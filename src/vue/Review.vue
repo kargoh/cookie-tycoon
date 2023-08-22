@@ -17,6 +17,6 @@
 
 <template>
     <div class="review" v-if="review == true">
-        <button class="review-button" @click="writeReview()">Write a review <img src="img/svg/icon-heart.svg" ></button>
+        <button class="review-button" @click="writeReview()">Write a review <span class="material-symbols-outlined">favorite</span></button>
     </div>
 </template>
