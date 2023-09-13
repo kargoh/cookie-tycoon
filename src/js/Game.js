@@ -12,8 +12,8 @@ class Game {
 
     increment() {
         // Define singular modifiers
-        var doubleClick = this.getItemAmount('better-click');
-        var amount = 1 + doubleClick;
+        var doubleClick = this.getItemAmount('better-click') * (this.getItemAmount('prestige') + 1);
+        var amount = (this.getItemAmount('prestige') + 1) + doubleClick;
 
         // Update cookies and save
         this.cookies = this.cookies + amount;
