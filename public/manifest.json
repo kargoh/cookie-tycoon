@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Cookie Tycoon",
   "description": "Cookie Tycoon is a casual cookie clicker game where you gather cookies by clicking cookies. The more you click, the greater your cookie empire.",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "action": {
     "default_popup": "index.html",
     "default_title": "Cookie Tycoon"
@@ -12,5 +12,8 @@
     "32": "img/png/icon32.png",
     "48": "img/png/icon48.png",
     "128": "img/png/icon128.png"
-  }
+  },
+  "permissions": [
+    "storage"
+  ]
 }
