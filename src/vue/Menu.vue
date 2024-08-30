@@ -44,7 +44,7 @@
     <ul class="nav" :class="{ visible: isOpen == true }">
       <li>
         <button @click="syncData()">
-          <span class="material-symbols-outlined">cloud_upload</span> Sync Data
+          <span class="material-symbols-outlined">cloud_done</span> Sync Data
         </button>
       </li>
       <li>

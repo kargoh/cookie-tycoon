@@ -78,7 +78,7 @@
       <div class="background" @click="runLastInputCallback"></div>
       <div class="container">
         <div class="content">
-          <p class="text" v-html="text"></p>
+          <div class="text" v-html="text"></div>
           <div class="inputs">
             <template v-for="(input, index) of inputs">
               <label v-if="input.label" :for="'popup-' + input.type + '-' + index">{{ input.label }}</label>

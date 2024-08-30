@@ -220,13 +220,13 @@ class Game {
     // Populate popup with options
     dispatchEvent(new CustomEvent('openPopup', {
       detail: {
-        text: 'Sync Data',
+        text: '<h1><span class="material-symbols-outlined">cloud_done</span>Sync Data</h1><p><em>Backup</em> or <em>restore</em> your data to Google if you want to play on a different computer.</p>',
         inputs: [
           { type: 'button', value: 'Backup to Google', 
             callback: function() {
               dispatchEvent(new CustomEvent('openPopup', {
                 detail: {
-                  text: 'Are you sure you want to <em>backup</em> your local data to Google?',
+                  text: '<h1><span class="material-symbols-outlined">upload</span>Backup to Google</h1><p>Are you sure you want to <em>backup</em> your local data to Google?</p>',
                   inputs: [
                     { value: 'Yes', type: 'button', callback: game.backupToChrome.bind(this) },
                     { type: 'button', value: 'No', callback: this.syncData.bind(this) }
@@ -239,7 +239,7 @@ class Game {
             callback: function() {
               dispatchEvent(new CustomEvent('openPopup', {
                 detail: {
-                  text: 'Are you sure you want to <em>restore</em> your local data from Google?',
+                  text: '<h1><span class="material-symbols-outlined">download</span>Restore from Google</h1><p>Are you sure you want to <em>restore</em> your local data from Google?</p>',
                   inputs: [
                     { value: 'Yes', type: 'button', callback: game.restoreFromChrome.bind(this) },
                     { type: 'button', value: 'No', callback: this.syncData.bind(this) }
