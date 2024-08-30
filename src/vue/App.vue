@@ -1,6 +1,6 @@
 <script setup>
   import '../scss/style.scss';
-  import { ref, onMounted, onUnmounted, watch } from 'vue';
+  import { ref, onMounted, watch } from 'vue';
   import { Game } from '../js/Game.js';
   import Cookie from './Cookie.vue';
   import Background from './Background.vue';
@@ -15,7 +15,6 @@
   var game = ref(window.game = new Game());
   var background = ref();
   var notifications = ref();
-  var keyRefresh = ref(0);
 
   // Increment cookie count (this gets called by Cookies.vue)
   function incrementCookie() {
@@ -57,18 +56,6 @@
     });
   }
 
-  function addEventListeners() {
-    addEventListener('restoreFromChrome', refreshUI);
-  }
-
-  function removeEventListeners() {
-    removeEventListener('restoreFromChrome', refreshUI);
-  }
-
-  function refreshUI(e) {
-    keyRefresh.value++; // This forces the UI to refresh
-  }
-
   watch(ui, function(target) {
     if (target) {
       // Check if UI element is 640x360 (min width/height defined in style.scss)
@@ -83,16 +70,11 @@
   onMounted(() => {
     autoIncrement();
     purchaseAmountToggle();
-    addEventListeners();
-  });
-
-  onUnmounted(() => {
-    removeEventListeners();
   });
 </script>
 
 <template>
-  <div ref="ui" class="ui" :key="keyRefresh">
+  <div ref="ui" class="ui">
     <div class="background">
       <Background ref="background" />
     </div>

@@ -174,7 +174,15 @@ class Game {
 
     // Save data object to Chrome storage and 
     chrome.storage.sync.set(data, function() {
-      dispatchEvent(new CustomEvent('backupToChrome'), { detail: data });
+      // Update popup
+      dispatchEvent(new CustomEvent('openPopup', {
+        detail: {
+          text: 'Success!',
+          inputs: [
+            { value: 'Continue', type: 'button', callback: function() { dispatchEvent(new CustomEvent('closePopup')); }}
+          ]
+        }
+      }));
     });
   }
 
@@ -196,8 +204,15 @@ class Game {
       localStorage.setItem('cookies', data['cookies']);
       localStorage.setItem('orders', JSON.stringify(data['orders']));
 
-      // Send event to refresh the Vue UI
-      dispatchEvent(new CustomEvent('restoreFromChrome', { detail: data }));
+      // Update popup
+      dispatchEvent(new CustomEvent('openPopup', {
+        detail: {
+          text: 'Success!',
+          inputs: [
+            { value: 'Continue', type: 'button', callback: function() { dispatchEvent(new CustomEvent('closePopup')); }}
+          ]
+        }
+      }));
     }.bind(this));
   }
 
@@ -233,11 +248,7 @@ class Game {
               }));
             }.bind(this)
           },
-          { type: 'button', value: 'Cancel', 
-            callback: function() {
-              dispatchEvent(new CustomEvent('closePopup'))
-            }
-          }
+          { type: 'button', value: 'Cancel', callback: function() { dispatchEvent(new CustomEvent('closePopup')); }}
         ]
       }
     }));
