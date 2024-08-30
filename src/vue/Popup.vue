@@ -1,4 +1,5 @@
 <script setup>
+  import '../scss/popup.scss';
   import { ref, onMounted, onUnmounted } from 'vue';
 
   // Initialize attributes
@@ -8,19 +9,19 @@
 
   // Add event listener(s)
   function addEventListeners() {
-    window.addEventListener('openDataPopup', openDataPopup);
-    window.addEventListener('closeDataPopup', closeDataPopup);
+    window.addEventListener('openPopup', openPopup);
+    window.addEventListener('closePopup', closePopup);
     window.addEventListener('keydown', keydown);
   }
   
   // Remove event listeners
   function removeEventListeners() {
-    window.removeEventListener('openDataPopup', openDataPopup);
-    window.removeEventListener('closeDataPopup', closeDataPopup);
+    window.removeEventListener('openPopup', openPopup);
+    window.removeEventListener('closePopup', closePopup);
     window.removeEventListener('keydown', keydown);
   }
 
-  function openDataPopup(e) {
+  function openPopup(e) {
     isOpen.value = true;
 
     // Assign values from custom event detail
@@ -35,24 +36,14 @@
         })
       }
     }
-
-    // Trigger opened event
-    setTimeout(function() {
-      window.dispatchEvent(new CustomEvent('popupOpened'));
-    }, 100);
   }
 
-  function closeDataPopup() {
+  function closePopup() {
     isOpen.value = false;
-
-    // Trigger opened event
-    setTimeout(function() {
-      window.dispatchEvent(new CustomEvent('popupClosed'));
-    }, 100);
   }
 
   function runCallback(callback, e) {
-    if (callback == null) callback = closeDataPopup;
+    if (callback == null) callback = closePopup;
     callback(e);
   }
 
@@ -95,7 +86,7 @@
             </template>
           </div>
           <a class="close" @click="runLastInputCallback">
-            <span class="material-symbols-rounded">close</span>
+            <span class="material-symbols-outlined">close</span>
           </a>
         </div>
       </div>

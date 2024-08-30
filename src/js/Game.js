@@ -200,6 +200,49 @@ class Game {
       dispatchEvent(new CustomEvent('restoreFromChrome', { detail: data }));
     }.bind(this));
   }
+
+  syncData() {
+    //var game = this;
+    var closePopup = function() {
+      dispatchEvent(new CustomEvent('closePopup'))
+    };
+
+    // Populate popup with options
+    dispatchEvent(new CustomEvent('openPopup', {
+      detail: {
+        text: 'Sync Data',
+        inputs: [
+          { type: 'button', value: 'Backup to Google', 
+            callback: function() {
+              dispatchEvent(new CustomEvent('openPopup', {
+                detail: {
+                  text: 'Are you sure you want to <em>backup</em> your local data to Google?',
+                  inputs: [
+                    { value: 'Yes', type: 'button', callback: game.backupToChrome.bind(this) },
+                    { type: 'button', value: 'No', callback: this.syncData.bind(this) }
+                  ]
+                }
+              }));
+            }.bind(this)
+          },
+          { type: 'button', value: 'Restore from Google', 
+            callback: function() {
+              dispatchEvent(new CustomEvent('openPopup', {
+                detail: {
+                  text: 'Are you sure you want to <em>restore</em> your local data from Google?',
+                  inputs: [
+                    { value: 'Yes', type: 'button', callback: game.restoreFromChrome.bind(this) },
+                    { type: 'button', value: 'No', callback: this.syncData.bind(this) }
+                  ]
+                }
+              }));
+            }.bind(this)
+          },
+          { type: 'button', value: 'Cancel', callback: closePopup }
+        ]
+      }
+    }));
+  }
 }
 
 export { Game }

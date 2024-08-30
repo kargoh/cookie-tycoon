@@ -8,6 +8,7 @@
   import Shop from './Shop.vue';
   import Review from './Review.vue';
   import Menu from './Menu.vue';
+  import Popup from './Popup.vue';
 
   // Initialize Vue variables
   var ui = ref();
@@ -106,5 +107,6 @@
     </div>
     <Menu :game="game" />
     <Review />
+    <Popup />
   </div>
 </template>

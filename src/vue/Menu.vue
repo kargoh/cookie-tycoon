@@ -24,7 +24,7 @@
   }
 
   function syncData() {
-    dispatchEvent(new CustomEvent('openDataPopup'), { detail: data });
+    props.game.syncData();
   }
   
   onMounted(async () => {
@@ -43,13 +43,13 @@
     </button>
     <ul class="nav" :class="{ visible: isOpen == true }">
       <li>
-        <button @click="openFullscreen()">
-          <span class="material-symbols-outlined">fullscreen</span> Open Fullscreen
+        <button @click="syncData()">
+          <span class="material-symbols-outlined">cloud_upload</span> Sync Data
         </button>
       </li>
       <li>
-        <button @click="syncData()">
-          <span class="material-symbols-outlined">cloud_upload</span> Sync Data
+        <button @click="openFullscreen()">
+          <span class="material-symbols-outlined">fullscreen</span> Open Fullscreen
         </button>
       </li>
       <li class="stats">

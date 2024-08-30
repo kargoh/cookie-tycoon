@@ -1,0 +1,105 @@
+@import './variables.scss';
+
+.popup {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+
+  .background {
+    background: linear-gradient(180deg, rgba(#9be6ff, 0.75) 0%, rgba(#0064f4, 0.75) 100%);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .container {
+    background-color: $color-primary;
+    border: 0.125rem solid #fff;
+    border-radius: 1rem;
+    box-shadow: inset 0.125rem 0.125rem rgba(#000, 0.2), 0.125rem 0.125rem rgba(#000, 0.2);
+    position: relative;
+    width: 50vw;
+    z-index: 1;
+
+    .content {
+      padding: 1rem;
+
+      .text {
+        color: #fff;
+        font-size: 0.75rem;
+        font-weight: bold;
+        text-shadow: 0.0625rem 0.0625rem rgba(#000, 0.2);
+        text-align: center;
+
+        em {
+          border-bottom: 0.125rem solid #fff;
+          box-shadow: 0rem 0.125rem rgba(#000, 0.2);
+        }
+      }
+
+      .inputs {
+        align-items: center;
+        gap: 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        input[type="button"] {
+          background-color: $color-primary;
+          border: 0.125rem solid #fff;
+          border-radius: 1rem;
+          box-shadow: inset 0.125rem 0.125rem rgba(#000, 0.2), 0.125rem 0.125rem rgba(#000, 0.2);
+          color: #fff;
+          cursor: pointer;
+          font-size: 0.75rem;
+          font-weight: bold;
+          margin: 0;
+          padding: 0.5rem 1rem;
+          text-shadow: 0.0625rem 0.0625rem rgba(#000, 0.2);
+
+          &:hover {
+            background-color: rgba(#000, 0.2);
+          }
+
+          &:last-of-type {
+            background-color: #ffffff;
+            box-shadow: 0.125rem 0.125rem rgba(#000, 0.2);
+            color: $color-primary;
+            text-shadow: initial;
+
+            &:hover {
+              box-shadow: none;
+            }
+          }
+        }
+      }
+
+      .close {
+        align-items: center;
+        border-radius: 99rem;
+        color: #ffffff;
+        cursor: pointer;
+        height: 1.5rem;
+        justify-content: center;
+        margin-left: auto;
+        position: absolute;
+        right: 0.5rem;
+        text-shadow: 0.0625rem 0.0625rem rgba(#000, 0.2);
+        top: 0.5rem;
+        width: 1.5rem;
+
+        &:hover {
+          background-color: rgba(#000, 0.2);
+        }
+      }
+    }
+  }
+}
