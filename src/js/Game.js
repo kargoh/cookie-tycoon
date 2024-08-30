@@ -202,11 +202,6 @@ class Game {
   }
 
   syncData() {
-    //var game = this;
-    var closePopup = function() {
-      dispatchEvent(new CustomEvent('closePopup'))
-    };
-
     // Populate popup with options
     dispatchEvent(new CustomEvent('openPopup', {
       detail: {
@@ -238,7 +233,11 @@ class Game {
               }));
             }.bind(this)
           },
-          { type: 'button', value: 'Cancel', callback: closePopup }
+          { type: 'button', value: 'Cancel', 
+            callback: function() {
+              dispatchEvent(new CustomEvent('closePopup'))
+            }
+          }
         ]
       }
     }));
