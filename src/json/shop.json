@@ -175,6 +175,24 @@
             "color": "linear-gradient(135deg, #223dff 25%, #7a00ff 100%)"
         }
     },
+    "quantum-realm": {
+        "name": "Quantum Realm",
+        "price": 7500000,
+        "stock": -1,
+        "description": "You breach into the quantum realm, harnessing infinite parallel universes to produce cookies across all dimensions!",
+        "tooltip": "/s",
+        "scale": 1.07,
+        "amount": 1,
+        "cookie-production": 25000,
+        "unlock": {
+            "key": "galactic-factory",
+            "amount": 60
+        },
+        "icon": {
+            "name": "blur_on",
+            "color": "linear-gradient(135deg, #00ff88 25%, #0055ff 100%)"
+        }
+    },
     "prestige": {
         "name": "Prestige",
         "price": -1,

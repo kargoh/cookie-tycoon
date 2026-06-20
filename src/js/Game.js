@@ -34,6 +34,7 @@ class Game {
     var moonCookies = this.getItemAmount('moon-cookies');
     var spaceshipEnterprise = this.getItemAmount('spaceship-enterprise');
     var galacticFactory = this.getItemAmount('galactic-factory');
+    var quantumRealm = this.getItemAmount('quantum-realm');
     var amount = oven
     + bakery
     + delivery
@@ -42,7 +43,8 @@ class Game {
     + spaceShip
     + moonCookies
     + spaceshipEnterprise
-    + galacticFactory;
+    + galacticFactory
+    + quantumRealm;
 
     // Update cookies and save
     this.cookies = this.cookies + amount;
